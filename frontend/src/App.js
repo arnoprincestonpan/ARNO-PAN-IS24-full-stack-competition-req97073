@@ -7,6 +7,7 @@ import AddEdit from "./pages/AddEdit"
 import View from "./pages/View"
 import About from "./pages/About"
 import "./App.css";
+import Header from "./components/Header";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <body>
         <BrowserRouter>
           <main>
+            <Header/>
             <ToastContainer />
             <Routes>
               <Route path="/" element={<Home />} />

@@ -1,0 +1,52 @@
+.header {
+    overflow: hidden;
+    background-color: #F1F1F1;
+}
+
+.header p {
+    float: left;
+    border-radius: 3px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    line-height: 1rem;
+}
+
+/* Remove blue underline in mobile */
+a {
+    text-decoration: none;
+}
+
+.header p.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #5C5239;
+}
+
+.header p:hover {
+    background: #ddd;
+    color: #5d6770;
+}
+
+.header p.active {
+    background-color: #917c46;
+    color: white;
+}
+
+.header-right {
+    float: right;
+}
+
+@media screen and (max-width: 480px) {
+    .header p {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .header-right {
+        float: none;
+    }
+}
