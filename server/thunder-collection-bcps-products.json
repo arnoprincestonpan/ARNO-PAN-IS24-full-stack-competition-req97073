@@ -1,0 +1,139 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "products",
+    "dateExported": "2023-03-25T03:13:25.796Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4297be9b-61e4-4099-af73-9ce536eaa8ad",
+            "colId": "b3f77592-f956-45b5-b65b-9a362aa2735d",
+            "containerId": "",
+            "name": "All Products",
+            "url": "localhost:5000/api/products",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-03-25T00:46:58.656Z",
+            "modified": "2023-03-25T00:47:45.694Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "738ad0aa-3e5f-4502-847d-3c5978ecca97",
+            "colId": "b3f77592-f956-45b5-b65b-9a362aa2735d",
+            "containerId": "",
+            "name": "Create new Product Copy",
+            "url": "localhost:5000/api/products",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2023-03-25T02:54:50.002Z",
+            "modified": "2023-03-25T02:54:50.002Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "productName",
+                        "value": "House of the Dragon"
+                    },
+                    {
+                        "name": "productOwnerName",
+                        "value": "George R. R. Martin"
+                    },
+                    {
+                        "name": "Developers",
+                        "value": "[Matt Smith, Emma D'Arcy, Olivia Cooke, Ewan Mitchell, Paddy Considine]"
+                    },
+                    {
+                        "name": "scrumMasterName",
+                        "value": "Ryan J. Condal"
+                    },
+                    {
+                        "name": "startDate",
+                        "value": "2023/03/24"
+                    },
+                    {
+                        "name": "methodology",
+                        "value": "Waterfall"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "d036ef61-6aea-4d0c-a859-f4667010dbdd",
+            "colId": "b3f77592-f956-45b5-b65b-9a362aa2735d",
+            "containerId": "",
+            "name": "Product by ProductId",
+            "url": "localhost:5000/api/product/ed658b01-3c7e-4e1b-9a9b-22cd2e7970c9",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-03-25T01:49:04.135Z",
+            "modified": "2023-03-25T02:59:53.619Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "dd87a746-11e6-493b-aaea-1b0b17cdf275",
+            "colId": "b3f77592-f956-45b5-b65b-9a362aa2735d",
+            "containerId": "",
+            "name": "Delete by ProductId",
+            "url": "localhost:5000/api/product/bb762a46-62f6-479f-b48e-10dbda06265e",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-03-25T02:21:13.760Z",
+            "modified": "2023-03-25T02:48:01.131Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ae9af7da-053c-4094-bead-75b8d576f5a0",
+            "colId": "b3f77592-f956-45b5-b65b-9a362aa2735d",
+            "containerId": "",
+            "name": "Product by Id",
+            "url": "localhost:5000/api/product/ed658b01-3c7e-4e1b-9a9b-22cd2e7970c9",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-03-25T01:18:34.059Z",
+            "modified": "2023-03-25T03:00:55.534Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "productName",
+                        "value": "House of the Dragon"
+                    },
+                    {
+                        "name": "productOwnerName",
+                        "value": "Arno Pan"
+                    },
+                    {
+                        "name": "Developers",
+                        "value": "[Matt Smith, Emma D'Arcy, Olivia Cooke, Ewan Mitchell, Paddy Considine]"
+                    },
+                    {
+                        "name": "scrumMasterName",
+                        "value": "Ryan J. Condal"
+                    },
+                    {
+                        "name": "startDate",
+                        "value": "2023/03/24"
+                    },
+                    {
+                        "name": "methodology",
+                        "value": "Waterfall"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ]
+}
