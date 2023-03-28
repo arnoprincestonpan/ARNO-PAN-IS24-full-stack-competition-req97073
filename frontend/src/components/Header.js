@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
   // useState for activeTab(s)
   const [activeTab, setActiveTab] = useState("Home");
+
   return (
     <div className="header">
       <p className="logo">Product Management System</p>

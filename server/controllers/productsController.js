@@ -1,7 +1,6 @@
-import { v4 as uuid } from "uuid"
 
+// initialize fs to read/write later
 const fs = require("fs")
-
 
 export const getProducts = (req, res) => {
     let productsjson = fs.readFileSync("data.json", "utf-8")
@@ -55,7 +54,7 @@ export const createProduct = (req, res) => {
     if(Object.keys(product).length !== 0){
         let productsjson = fs.readFileSync("data.json", "utf-8")
         let products = JSON.parse(productsjson)
-        products.push({...product, productId: uuid()})
+        products.push({...product, productId: products.length + 1})
         productsjson = JSON.stringify(products, null, 4)
         fs.writeFileSync("data.json", productsjson, "utf-8")
         res.send(product)
