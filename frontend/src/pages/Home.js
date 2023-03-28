@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"
 import "./Home.css";
 import axios from "axios";
 
@@ -32,6 +33,7 @@ function Home() {
             <th scope="col">Developer Names</th>
             <th scope="col">Start Date</th>
             <th scope="col">Methodology</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -46,6 +48,16 @@ function Home() {
                     <td>{product.Developers.join(", \n")}</td>
                     <td>{product.startDate}</td>
                     <td>{product.methodology}</td>
+
+                    <td>
+                      <Link to={`/update/${product.productId}`}>
+                        <button className="btn btn-edit">Edit</button>
+                      </Link>
+                        <button className="btn btn-delete">Delete</button>
+                      <Link to={`/view/${product.productId}`}>
+                        <button className="btn btn-view">View</button>
+                      </Link>
+                    </td>
                   </tr>
                 );
               })}
