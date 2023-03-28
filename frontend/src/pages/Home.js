@@ -1,52 +1,58 @@
-import React, {useState, useEffect} from 'react'
-import {Link} from "react-router-dom"
-import "./Home.css"
-import axios from "axios"
+import React, { useState, useEffect } from "react";
+import "./Home.css";
+import axios from "axios";
 
 function Home() {
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    getProducts()
-  }, [])
+    getProducts();
+  }, []);
 
   // retrieve all Products from Backend
-  const getProducts = async() => {
-    const response = await axios.get("http://localhost:5000/api/products")
-    if(response.status === 200){
-      setData(response.data)
+  const getProducts = async () => {
+    const response = await axios.get("http://localhost:5000/api/products");
+    if (response.status === 200) {
+      setData(response.data);
     } else {
-      console.log("Server is not on or Error.")
+      console.log("Server is not on or Error.");
     }
-  }
+  };
 
   return (
-    <div style={{marginTop: "150px"}}>
+    <div>
       <h2>Home</h2>
       <table className="styled-table">
         <thead>
           <tr>
-            <th>Product Number</th>
-            <th>Product Name</th>
-            <th>Scrum Master</th>
-            <th>Product Owner</th>
-            <th>Developer Names</th>
-            <th>Start Date</th>
-            <th>Methodology</th>
+            <th scope="col">Product Number</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Scrum Master</th>
+            <th scope="col">Product Owner</th>
+            <th scope="col">Developer Names</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">Methodology</th>
           </tr>
-          <tbody>
-            { data && data.map((product, index) => {
-              return (
-                <tr key={index}>
-                  <td scope="row">{product.productId}</td>
-                </tr>
-              )
-            })}
-          </tbody>
         </thead>
+        <tbody>
+            {data &&
+              data.map((product, index) => {
+                return (
+                  <tr key={index}>
+                    <th scope="row">{product.productId}</th>
+                    <td>{product.productName}</td>
+                    <td>{product.scrumMasterName}</td>
+                    <td>{product.productOwnerName}</td>
+                    <td>{product.Developers.join(", \n")}</td>
+                    <td>{product.startDate}</td>
+                    <td>{product.methodology}</td>
+                  </tr>
+                );
+              })}
+          </tbody>
       </table>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
