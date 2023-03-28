@@ -4,16 +4,17 @@ import axios from "axios";
 import "./AddEdit.css";
 import { toast } from "react-toastify";
 
-const initalState = {
-  productName: "",
-  productOwnerName: "",
-  Developers: [],
-  scrumMasterName: "",
-  startDate: "",
-  methodology: "",
-};
 
 function AddEdit() {
+  const initalState = {
+    productName: "",
+    productOwnerName: "",
+    Developers: [],
+    scrumMasterName: "",
+    startDate: "",
+    methodology: "",
+  };
+
   const [state, setState] = useState(initalState);
 
   const {
@@ -25,7 +26,7 @@ function AddEdit() {
     methodology,
   } = initalState;
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const addProduct = async (data) => {
     const response = await axios.post(
@@ -55,13 +56,14 @@ function AddEdit() {
       toast.error(`Please enter an Array of first name(s) and last name(s), up to 5. Format: ["Jane Doe", "James Bond"]`)
     } else {
       addProduct(state);
-      history.push("/");
+      navigate("/");
     }
   };
 
   const handleInputChange = (e) => {
-    let { productName, value } = e.target;
-    setState({ ...state, [productName]: value });
+    let {productName, value} = e.target.value
+    console.log(initalState)
+    setState({...state, [productName] : value})
   };
 
   return (
@@ -72,7 +74,7 @@ function AddEdit() {
           type="text"
           id="productName"
           name="productName"
-          placeholder="Enter Product Name..."
+          placeholder="Enter Product Name"
           onChange={handleInputChange}
           value={productName}
         />
@@ -126,6 +128,8 @@ function AddEdit() {
           onChange={handleInputChange}
           value={methodology}
         />
+        <br/>
+        <input type="submit" value="Add"/>
       </form>
     </div>
   );

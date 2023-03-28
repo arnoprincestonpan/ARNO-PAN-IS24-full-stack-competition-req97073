@@ -16,7 +16,7 @@ function App() {
         <BrowserRouter>
           <main>
             <Header/>
-            <ToastContainer />
+            <ToastContainer position="top-center"/>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/add" element={<AddEdit />} />

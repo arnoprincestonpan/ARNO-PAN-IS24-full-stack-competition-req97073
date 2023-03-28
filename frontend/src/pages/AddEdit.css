@@ -1,0 +1,28 @@
+label {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+input[type="text"],
+input[type="submit"]{
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 8px;
+    width: 280px;
+    max-width: 800px;
+    font-size: 16px;
+}
+
+input[type="submit"]{
+    margin: 1rem;
+    padding: 1rem;
+    width: 296px;
+    border: none;
+    background-color: #ccac6c;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    background-color: #45a049;
+}
