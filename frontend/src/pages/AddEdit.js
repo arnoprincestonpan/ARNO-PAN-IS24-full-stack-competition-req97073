@@ -17,15 +17,7 @@ function AddEdit() {
 
   const [state, setState] = useState(initalState);
 
-  const {
-    productName,
-    productOwnerName,
-    Developers,
-    scrumMasterName,
-    startDate,
-    methodology,
-  } = initalState;
-
+  // initialize useNavigate
   const navigate = useNavigate();
 
   const addProduct = async (data) => {
@@ -42,28 +34,24 @@ function AddEdit() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
-      !productName ||
-      !productOwnerName ||
-      !Developers ||
-      !scrumMasterName ||
-      !startDate ||
-      !methodology
+      !state.productName ||
+      !state.productOwnerName ||
+      !state.Developers ||
+      !state.scrumMasterName ||
+      !state.startDate ||
+      !state.methodology
     ) {
       toast.error("Please provide values into each input field(s).")
-    } else if(Developers > 5){
+    } else if(state.Developers.length > 5){
       toast.error("Please enter less than 5 developers.")
-    } else if(!Array.isArray(Developers)){
+    } else if(!Array.isArray(state.Developers)){
       toast.error(`Please enter an Array of first name(s) and last name(s), up to 5. Format: ["Jane Doe", "James Bond"]`)
-    } else {
-      addProduct(state);
-      navigate("/");
+    } else if(state.methodology !== "Agile" || state.methodology !== "Waterfall"){
+      toast.error(`Please enter an Array of first name(s) and last name(s), up to 5. Format: ["Jane Doe", "James Bond"]`)
+    }else {
+      addProduct(state); // only add into server.js once checks have passed
+      navigate("/"); // head Home.js
     }
-  };
-
-  const handleInputChange = (e) => {
-    let {productName, value} = e.target.value
-    console.log(initalState)
-    setState({...state, [productName] : value})
   };
 
   return (
@@ -75,8 +63,8 @@ function AddEdit() {
           id="productName"
           name="productName"
           placeholder="Enter Product Name"
-          onChange={handleInputChange}
-          value={productName}
+          onChange={(e) => setState({...state, productName : e.target.value})}
+          value={state.productName}
         />
 
         <label htmlFor="productOwnerName">Product Owner Name</label>
@@ -85,8 +73,8 @@ function AddEdit() {
           id="productOwnerName"
           name="productOwnerName"
           placeholder="Enter Product Owner Name..."
-          onChange={handleInputChange}
-          value={productOwnerName}
+          onChange={(e) => setState({...state, productOwnerName : e.target.value})}
+          value={state.productOwnerName}
         />
 
         <label htmlFor="Developers">Developers</label>
@@ -95,8 +83,8 @@ function AddEdit() {
           id="Developers"
           name="Developers"
           placeholder="Enter Developers Name(s)..."
-          onChange={handleInputChange}
-          value={Developers}
+          onChange={(e) => setState({...state, Developers : e.target.value})}
+          value={state.Developers}
         />
 
         <label htmlFor="scrumMasterName">Scrum Master Name</label>
@@ -105,8 +93,8 @@ function AddEdit() {
           id="scrumMasterName"
           name="scrumMasterName"
           placeholder="Enter Scrum Master Name..."
-          onChange={handleInputChange}
-          value={scrumMasterName}
+          onChange={(e) => setState({...state, scrumMasterName : e.target.value})}
+          value={state.scrumMasterName}
         />
 
         <label htmlFor="startDate">Start Date</label>
@@ -115,8 +103,8 @@ function AddEdit() {
           id="startDate"
           name="startDate"
           placeholder="Enter Start Date MM/DD/YYYY..."
-          onChange={handleInputChange}
-          value={startDate}
+          onChange={(e) => setState({...state, startDate : e.target.value})}
+          value={state.startDate}
         />
 
         <label htmlFor="methodology">Methodology</label>
@@ -125,8 +113,8 @@ function AddEdit() {
           id="methodology"
           name="methodology"
           placeholder="Enter Methodology...Agile or Waterfall..."
-          onChange={handleInputChange}
-          value={methodology}
+          onChange={(e) => setState({...state, methodology : e.target.value})}
+          value={state.methodology}
         />
         <br/>
         <input type="submit" value="Add"/>

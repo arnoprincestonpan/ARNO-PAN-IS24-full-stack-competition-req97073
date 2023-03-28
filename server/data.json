@@ -598,35 +598,5 @@
         "scrumMasterName": "Leah Mckinney",
         "startDate": "2023/07/11",
         "methodology": "Waterfall"
-    },
-    {
-        "productName": "",
-        "productOwnerName": "",
-        "Developers": [],
-        "scrumMasterName": "",
-        "startDate": "",
-        "methodology": "",
-        "productId": 41
-    },
-    {
-        "productName": "",
-        "productOwnerName": "",
-        "Developers": [],
-        "scrumMasterName": "",
-        "startDate": "",
-        "methodology": "",
-        "productId": 42
-    },
-    {
-        "productName": "test",
-        "productOwnerName": "test",
-        "Developers": [
-            "test",
-            "test"
-        ],
-        "scrumMasterName": "test",
-        "startDate": "test",
-        "methodology": "test",
-        "productId": 43
     }
 ]
