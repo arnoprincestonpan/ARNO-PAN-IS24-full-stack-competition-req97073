@@ -5,7 +5,12 @@ const fs = require("fs")
 export const getProducts = (req, res) => {
     let productsjson = fs.readFileSync("data.json", "utf-8")
     let products = JSON.parse(productsjson)
-    
+    // sort productId by number value
+    products = products.sort((a, b) => {
+        if(a.productId < b.productId){
+            return -1
+        }
+    })
     if(products.length === 0){
         res.send("There are no products.")
     } else {
@@ -123,11 +128,11 @@ export const deleteProductByProductId = (req, res) => {
 export const updateProductByProductId = (req, res) => {
     let productsjson = fs.readFileSync("data.json", "utf-8")
     let products = JSON.parse(productsjson)
-    const singleProduct = products.find((product) => product.productId == req.params.productId)
+    const singleProduct = products.filter((product) => product.productId == req.params.productId)[0]
     console.log(req.params.productId)
     if(singleProduct !== undefined){
         // remove previous copy of singleProduct
-        products.pop(singleProduct)
+        products = products.filter(product => product.productId !== singleProduct.productId)
 
         singleProduct.productName = req.body.productName
         singleProduct.productOwnerName = req.body.productOwnerName

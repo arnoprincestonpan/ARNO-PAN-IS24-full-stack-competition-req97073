@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import "./AddEdit.css";
+import "./Edit.css";
 import { toast } from "react-toastify";
 
-function AddEdit() {
+function Edit() {
   // default state
   const initalState = {
     productName: "",
@@ -38,27 +38,25 @@ function AddEdit() {
     });
   }
 
+  const updateSingleProduct = async(state) => {
+    const response = await axios
+    .put(`http://localhost:5000/api/product/${productId}`, state)
+    .then(res => {
+      if(res.status === 200){
+        toast.success("Editted Product Successfully.")
+        navigate("/", 500); // head Home.js, 1/2 a second to refresh
+      }
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
   useEffect(() => {
     if(productId) {
       console.log(productId)
       getSingleProduct(productId)
     }
   }, [productId])
-
-  // use to add new product on serverside
-  const addProduct = async (data) => {
-    const response = await axios.post(
-      "http://localhost:5000/api/products",
-      data
-    ).then(res => {
-      if(res.status === 200){
-        toast.success("Added Product Successfully.")
-        navigate("/", 500); // head Home.js, 1/2 a second to refresh
-      }
-    }).catch(err => {
-      console.log(err)
-    })
-  };
 
   // patterns to pass
   const datePattern = /^\d{4}\/(0[1-9]|1[0-2])\/(0[1-9]|[1-2][0-9]|3[0-1])$/;
@@ -107,13 +105,13 @@ function AddEdit() {
         `Date Pattern: Please enter a date pattern like 2023/03/28. YYYY/MM/DD`
       );
     } else {
-      addProduct(state); // only add into server.js once checks have passed
+      updateSingleProduct(state); // only add into server.js once checks have passed
     }
   };
 
   return (
     <div>
-      <h2>Add</h2>
+      <h2>Edit</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="productId">Product Id</label>
         <input 
@@ -189,10 +187,10 @@ function AddEdit() {
           value={state.methodology}
         />
         <br />
-        <input type="submit" value="Add" />
+        <input type="submit" value="Edit" />
       </form>
     </div>
   );
 }
 
-export default AddEdit;
+export default Edit;

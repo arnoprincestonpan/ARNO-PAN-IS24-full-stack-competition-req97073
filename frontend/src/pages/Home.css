@@ -1,5 +1,6 @@
 .styled-table {
     border-collapse: collapse;
+    border: 1px solid whitesmoke;
     margin: auto;
     font-size: 1rem;
     max-width: 800px;
@@ -14,7 +15,7 @@
 
 .styled-table th,
 .styled-table td {
-    padding: 1rem
+    padding: 1rem;
 }
 
 .styled-table tbody tr:nth-of-type(even){
