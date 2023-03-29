@@ -50,19 +50,23 @@ function AddEdit() {
       !state.methodology
     ) {
       toast.error("Please provide values into each input field(s).")
-    } else if(!namePattern.test(productName)) {
-      toast.error("Please enter a first and last name that has their first letters capitalized.")
+    } else if(!namePattern.test(state.productName)) {
+      toast.error("Product Name: Please enter a first and a last name, with only their first letters capitalized.")
+    } else if(!namePattern.test(state.productOwnerName)) {
+      toast.error("Product Owner Name: Please enter a first and a last name, with only their first letters capitalized.")
+    } else if(!namePattern.test(state.scrumMasterName)) {
+      toast.error("Scrum Master Name: Please enter a first and a last name, with only their first letters capitalized.")
     } else if(state.Developers.length > 5){
       console.log(state.Developers)
-      toast.error("Please enter less than 5 developers.")
+      toast.error("Developers: Please enter less than 5 developers.")
     } else if(!Array.isArray(state.Developers)){
       console.log(state.Developers)
-      toast.error(`Please enter an Array of first name(s) and last name(s), up to 5. Format: ["Jane Doe", "James Bond"]`)
-    } else if(!state.methodology === "Agile" || !state.methodology === "Waterfall"){
+      toast.error(`Developers: Please enter an Array of first name(s) and last name(s), up to 5. Format: ["Jane Doe", "James Bond"]`)
+    } else if(!state.methodology.toLowerCase() === 'agile' || !state.methodology.toLowerCase() === 'waterfall'){
       console.log(state.methodology)
-      toast.error(`Please enter "Agile" or "Waterfall"`)
+      toast.error(`Methodology: Please enter "Agile" or "Waterfall"`)
     } else if(!datePattern.test(state.startDate)){
-      toast.error(`Please enter a date pattern like 2023/03/28. YYYY/MM/DD`)
+      toast.error(`Date Pattern: Please enter a date pattern like 2023/03/28. YYYY/MM/DD`)
     } else {
       addProduct(state); // only add into server.js once checks have passed
       navigate("/"); // head Home.js
@@ -117,7 +121,7 @@ function AddEdit() {
           type="text"
           id="startDate"
           name="startDate"
-          placeholder="Enter Start Date MM/DD/YYYY..."
+          placeholder="Enter Start Date YYYY/MM/DD..."
           onChange={(e) => setState({...state, startDate : e.target.value})}
           value={state.startDate}
         />

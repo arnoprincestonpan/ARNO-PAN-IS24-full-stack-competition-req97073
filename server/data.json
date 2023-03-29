@@ -598,17 +598,5 @@
         "scrumMasterName": "Leah Mckinney",
         "startDate": "2023/07/11",
         "methodology": "Waterfall"
-    },
-    {
-        "productName": "Arno",
-        "productOwnerName": "Arno",
-        "Developers": [
-            "Arno Pan",
-            " Edward Pan"
-        ],
-        "scrumMasterName": "Arno",
-        "startDate": "12/12/2023",
-        "methodology": "Agile",
-        "productId": 41
     }
 ]
