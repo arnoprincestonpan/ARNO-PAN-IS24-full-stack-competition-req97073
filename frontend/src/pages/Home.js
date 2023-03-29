@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 
 function Home() {
   const [data, setData] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     getProducts();
@@ -21,7 +20,7 @@ function Home() {
             toast.success(
               "Deleted Product Successfully. Wait for refresh. Or refresh browser."
             );
-            getProducts() // refresh get products again
+            getProducts(); // refresh get products again
           }
         })
         .catch((err) => {

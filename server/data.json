@@ -3,7 +3,10 @@
         "productId": "14",
         "productName": "House of the Dragon",
         "productOwnerName": "Edward Pan",
-        "Developers": "[Matt Smith, Emma D'Arcy, Olivia Cooke, Ewan Mitchell, Paddy Considine]",
+        "Developers": [
+            "Arno Pan",
+            "Edward Pan"
+        ],
         "scrumMasterName": "Ryan J. Condal",
         "startDate": "2023/03/24",
         "methodology": "Waterfall"
@@ -402,7 +405,10 @@
         "productId": "14",
         "productName": "House of the Dragon",
         "productOwnerName": "Edward Pan",
-        "Developers": "[Matt Smith, Emma D'Arcy, Olivia Cooke, Ewan Mitchell, Paddy Considine]",
+        "Developers": [
+            "Arno Pan",
+            "Edward Pan"
+        ],
         "scrumMasterName": "Ryan J. Condal",
         "startDate": "2023/03/24",
         "methodology": "Waterfall"
