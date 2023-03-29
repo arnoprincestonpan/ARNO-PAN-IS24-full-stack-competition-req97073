@@ -54,6 +54,10 @@ export const createProduct = (req, res) => {
     if(Object.keys(product).length !== 0){
         let productsjson = fs.readFileSync("data.json", "utf-8")
         let products = JSON.parse(productsjson)
+        let newId = products.length + 1
+        if(products.filter((product) => product.productId == newId)){
+            newId++
+        }
         products.push({...product, productId: products.length + 1})
         productsjson = JSON.stringify(products, null, 4)
         fs.writeFileSync("data.json", productsjson, "utf-8")
@@ -66,35 +70,61 @@ export const createProduct = (req, res) => {
 }
 
 export const getProductByProductId = (req, res) => {
+    // let productsjson = fs.readFileSync("data.json", "utf-8")
+    // let products = JSON.parse(productsjson)
+    // const singleProduct = products.filter((product) => product.productId === req.params.productId)
+    // console.log(singleProduct)
+
+    // if(Object.keys(singleProduct).length !== 0){
+    //     console.log(singleProduct)
+    //     res.send(singleProduct)
+    // } else {
+    //     res.send("Product not found.")
+    // }
+
     let productsjson = fs.readFileSync("data.json", "utf-8")
     let products = JSON.parse(productsjson)
-    const singleProduct = products.filter((product) => product.productId === req.params.productId)
-    if(Object.keys(singleProduct).length !== 0){
-        console.log(singleProduct)
-        res.send(singleProduct)
+    let product = products.filter((product) => product.productId == req.params.productId)
+    if(Object.keys(product).length !== 0){
+        res.send(product)
     } else {
         res.send("Product not found.")
     }
 }
 
 export const deleteProductByProductId = (req, res) => {
+    // let productsjson = fs.readFileSync("data.json", "utf-8")
+    // let products = JSON.parse(productsjson)
+    // const product = products.filter((product) => product.productId == req.params.productId)
+    // console.log(req.params.productId)
+    // if(product){
+    //     products.pop(product => product.productId == req.params.productId)
+    //     productsjson = JSON.stringify(products, null, 4)
+    //     fs.writeFileSync("data.json", productsjson, "utf-8")
+    //     res.send("Product deleted.")
+    // } else {
+    //     res.send("Product not found.")
+    // }
+
     let productsjson = fs.readFileSync("data.json", "utf-8")
     let products = JSON.parse(productsjson)
-    const singleProduct = products.filter((product) => product.productId === req.params.productId)
+    console.log(products)
+    const singleProduct = products.filter((product) => product.productId == req.params.productId)[0]
     if(Object.keys(singleProduct).length !== 0){
-        products.pop(singleProduct)
+        products = products.filter(product => product.productId !== singleProduct.productId)
         productsjson = JSON.stringify(products, null, 4)
         fs.writeFileSync("data.json", productsjson, "utf-8")
-        res.send("Product deleted.")
+        res.send("Product Successfully Deleted.")
     } else {
-        res.send("Product not found.")
+        res.send("Product Not Found.")
     }
 }
 
 export const updateProductByProductId = (req, res) => {
     let productsjson = fs.readFileSync("data.json", "utf-8")
     let products = JSON.parse(productsjson)
-    const singleProduct = products.find((product) => product.productId === req.params.productId)
+    const singleProduct = products.find((product) => product.productId == req.params.productId)
+    console.log(req.params.productId)
     if(singleProduct !== undefined){
         // remove previous copy of singleProduct
         products.pop(singleProduct)
