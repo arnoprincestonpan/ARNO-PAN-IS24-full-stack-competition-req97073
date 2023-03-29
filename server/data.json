@@ -603,24 +603,61 @@
         "productName": "Arno Pan",
         "productOwnerName": "Arno Pan",
         "Developers": [
-            "Arno Pan",
-            " Edward Pan"
+            "Edward Pan",
+            " Janet Pan",
+            " Jackson Pan"
         ],
         "scrumMasterName": "Arno Pan",
-        "startDate": "2023/03/22",
+        "startDate": "2023/03/01",
         "methodology": "Agile",
         "productId": 41
     },
     {
         "productName": "Arno Pan",
-        "productOwnerName": "Edward Pan",
+        "productOwnerName": "Arno Pan",
         "Developers": [
             "Arno Pan",
             " Edward Pan"
         ],
         "scrumMasterName": "Arno Pan",
-        "startDate": "2023/03/21",
+        "startDate": "2023/03/03",
         "methodology": "Agile",
         "productId": 42
+    },
+    {
+        "productName": "Arno Pan",
+        "productOwnerName": "Arno Pan",
+        "Developers": [
+            "Arno Pan",
+            " Edward Pan"
+        ],
+        "scrumMasterName": "Arno Pan",
+        "startDate": "2023/03/03",
+        "methodology": "Agile",
+        "productId": 43
+    },
+    {
+        "productName": "Arno Pan",
+        "productOwnerName": "Arno Pan",
+        "Developers": [
+            "Edward Pan",
+            " Arno Pan"
+        ],
+        "scrumMasterName": "Arno Pan",
+        "startDate": "2023/03/01",
+        "methodology": "Waterfall",
+        "productId": 44
+    },
+    {
+        "productName": "Arno Pan",
+        "productOwnerName": "Arno Pan",
+        "Developers": [
+            "Edward Pan",
+            " Arno Pan"
+        ],
+        "scrumMasterName": "Arno Pan",
+        "startDate": "2023/03/01",
+        "methodology": "Waterfall",
+        "productId": 45
     }
 ]

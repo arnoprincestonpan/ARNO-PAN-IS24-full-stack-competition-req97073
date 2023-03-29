@@ -26,10 +26,14 @@ function AddEdit() {
     const response = await axios.post(
       "http://localhost:5000/api/products",
       data
-    );
-    if (response.status === 200) {
-      toast.success(response.data);
-    }
+    ).then(res => {
+      if(res.status === 200){
+        toast.success("Added Product Successfully.")
+        navigate("/", 500); // head Home.js, 1/2 a second to refresh
+      }
+    }).catch(err => {
+      console.log(err)
+    })
   };
 
   // patterns to pass
@@ -80,7 +84,6 @@ function AddEdit() {
       );
     } else {
       addProduct(state); // only add into server.js once checks have passed
-      navigate("/", 0); // head Home.js, 0 to refresh
     }
   };
 
