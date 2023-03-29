@@ -189,7 +189,7 @@ function AddEdit() {
           value={state.methodology}
         />
         <br />
-        <input type="submit" value="Add" />
+        <input type="submit" value="Save" />
       </form>
     </div>
   );

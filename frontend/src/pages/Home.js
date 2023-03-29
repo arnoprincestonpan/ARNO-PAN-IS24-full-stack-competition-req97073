@@ -42,6 +42,7 @@ function Home() {
   return (
     <div>
       <h1>Products</h1>
+      <p>Number of Products Available: {data.length}</p>
       <table className="styled-table">
         <thead>
           <tr>

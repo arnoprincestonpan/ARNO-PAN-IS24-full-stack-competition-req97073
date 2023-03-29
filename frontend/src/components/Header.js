@@ -8,7 +8,11 @@ function Header() {
 
   return (
     <div className="header">
-      <p className="logo">Product Management System</p>
+      <Link to="/">
+        <p className="logo" onClick={() => setActiveTab("Home")}>
+          Product Management System
+        </p>
+      </Link>
       <div className="header-right">
         {/* activeTabs by using className */}
         <Link to="/">

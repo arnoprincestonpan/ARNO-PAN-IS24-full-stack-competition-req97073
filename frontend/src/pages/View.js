@@ -23,6 +23,7 @@ function View() {
 
   return (
     <div>
+      <p>Home &gt; View</p>
         <div className="card">
           <div className="card-header">
             <h2>Product Information</h2>

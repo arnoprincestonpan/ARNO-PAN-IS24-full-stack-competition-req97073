@@ -44,7 +44,8 @@ function Edit() {
     .then(res => {
       if(res.status === 200){
         toast.success("Editted Product Successfully.")
-        navigate("/", 500); // head Home.js, 1/2 a second to refresh
+        // navigate("/", 500); // head Home.js, 1/2 a second to refresh
+        navigate(`/view/${productId}`, 500)
       }
     }).catch(err => {
       console.log(err)
@@ -111,6 +112,7 @@ function Edit() {
 
   return (
     <div>
+      <p>Home &gt; Edit</p>
       <h2>Edit</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="productId">Product Id</label>
