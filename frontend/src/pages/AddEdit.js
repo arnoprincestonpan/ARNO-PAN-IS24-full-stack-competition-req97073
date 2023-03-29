@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "./AddEdit.css";
 import { toast } from "react-toastify";
@@ -20,6 +20,30 @@ function AddEdit() {
 
   // initialize useNavigate
   const navigate = useNavigate();
+
+  // initialize useParams to retrieve productId
+  const {productId} = useParams()
+
+  const getSingleProduct = async(productId) => {
+    const response = await axios
+    .get(`http://localhost:5000/api/product/` + productId)
+    .then((res) => {
+      if (res.status === 200) {
+        console.log(productId)
+        setState({...response.data[0]})      
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+
+  useEffect(() => {
+    if(productId) {
+      console.log(productId)
+      getSingleProduct(productId)
+    }
+  }, [productId])
 
   // use to add new product on serverside
   const addProduct = async (data) => {
@@ -89,7 +113,16 @@ function AddEdit() {
 
   return (
     <div>
+      <h2>Add/Edit</h2>
       <form onSubmit={handleSubmit}>
+        <label htmlFor="productId">Product Id</label>
+        <input 
+          type="number"
+          id="productId"
+          name="productId"
+          placeholder="Assigned by Server"
+          disabled
+        />
         <label htmlFor="productName">Product Name</label>
         <input
           type="text"

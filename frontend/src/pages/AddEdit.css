@@ -5,7 +5,8 @@ label {
 }
 
 input[type="text"],
-input[type="submit"]{
+input[type="submit"],
+input[type="number"]{
     border: 1px solid grey;
     border-radius: 8px;
     padding: 8px;
@@ -14,15 +15,24 @@ input[type="submit"]{
     font-size: 16px;
 }
 
+input[type="number"]{
+    background-color: #e3a82b;
+}
+
+input[type="number"]::placeholder{
+    color: black;
+}
+
 input[type="submit"]{
     margin: 1rem;
     padding: 1rem;
     width: 296px;
     border: none;
-    background-color: #ccac6c;
+    background-color: #e3a82b;
+    color: white;
     cursor: pointer;
 }
 
 input[type="submit"]:hover{
-    background-color: #45a049;
+    background-color: green;
 }

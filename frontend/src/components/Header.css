@@ -1,12 +1,13 @@
 .header {
     overflow: hidden;
-    background-color: #F1F1F1;
+    background-color: #234075;
+    border-bottom: 3px solid #e3a82b;
 }
 
 .header p {
     float: left;
     border-radius: 3px;
-    color: black;
+    color: white;
     text-align: center;
     text-decoration: none;
     font-size: 1rem;
@@ -22,16 +23,15 @@ a {
 .header p.logo {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #5C5239;
 }
 
 .header p:hover {
-    background: #ddd;
-    color: #5d6770;
+    background: #9caed0;
+    color: darkslategrey;
 }
 
 .header p.active {
-    background-color: #917c46;
+    background-color: #e3a82b;
     color: white;
 }
 

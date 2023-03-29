@@ -11,10 +11,10 @@ function Home() {
     getProducts();
   }, []);
 
-  const onDeleteProduct = async (id) => {
+  const onDeleteProduct = async (productId) => {
     if (window.confirm("Are you sure you want to delete the Product?")) {
       const response = await axios
-        .delete(`http://localhost:5000/api/product/` + id)
+        .delete(`http://localhost:5000/api/product/` + productId)
         .then((res) => {
           if (res.status === 200) {
             toast.success(
@@ -41,7 +41,7 @@ function Home() {
 
   return (
     <div>
-      <h2>Home</h2>
+      <h1>Products</h1>
       <table className="styled-table">
         <thead>
           <tr>
