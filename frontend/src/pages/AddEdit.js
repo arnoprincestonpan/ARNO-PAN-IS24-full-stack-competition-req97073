@@ -6,6 +6,8 @@ import { toast } from "react-toastify";
 
 
 function AddEdit() {
+
+  // default state
   const initalState = {
     productName: "",
     productOwnerName: "",
@@ -15,11 +17,13 @@ function AddEdit() {
     methodology: "",
   };
 
+  // initialize useState
   const [state, setState] = useState(initalState);
 
   // initialize useNavigate
   const navigate = useNavigate();
 
+  // use to add new product on serverside
   const addProduct = async (data) => {
     const response = await axios.post(
       "http://localhost:5000/api/products",
@@ -29,6 +33,10 @@ function AddEdit() {
       toast.success(response.data);
     }
   };
+
+  // patterns to pass
+  const datePattern = /^\d{4}\/(0[1-9]|1[0-2])\/(0[1-9]|[1-2][0-9]|3[0-1])$/
+  const namePattern = /^[A-Z][a-z]+ [A-Z][a-z]+$/
 
   // prevent browser defaults
   const handleSubmit = (e) => {
@@ -42,13 +50,20 @@ function AddEdit() {
       !state.methodology
     ) {
       toast.error("Please provide values into each input field(s).")
+    } else if(!namePattern.test(productName)) {
+      toast.error("Please enter a first and last name that has their first letters capitalized.")
     } else if(state.Developers.length > 5){
+      console.log(state.Developers)
       toast.error("Please enter less than 5 developers.")
     } else if(!Array.isArray(state.Developers)){
+      console.log(state.Developers)
       toast.error(`Please enter an Array of first name(s) and last name(s), up to 5. Format: ["Jane Doe", "James Bond"]`)
-    } else if(state.methodology !== "Agile" || state.methodology !== "Waterfall"){
-      toast.error(`Please enter an Array of first name(s) and last name(s), up to 5. Format: ["Jane Doe", "James Bond"]`)
-    }else {
+    } else if(!state.methodology === "Agile" || !state.methodology === "Waterfall"){
+      console.log(state.methodology)
+      toast.error(`Please enter "Agile" or "Waterfall"`)
+    } else if(!datePattern.test(state.startDate)){
+      toast.error(`Please enter a date pattern like 2023/03/28. YYYY/MM/DD`)
+    } else {
       addProduct(state); // only add into server.js once checks have passed
       navigate("/"); // head Home.js
     }
@@ -83,7 +98,7 @@ function AddEdit() {
           id="Developers"
           name="Developers"
           placeholder="Enter Developers Name(s)..."
-          onChange={(e) => setState({...state, Developers : e.target.value})}
+          onChange={(e) => setState({...state, Developers : e.target.value.split(",")})}
           value={state.Developers}
         />
 
