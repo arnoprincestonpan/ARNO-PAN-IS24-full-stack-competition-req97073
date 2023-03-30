@@ -23,7 +23,7 @@ function App() {
               <Route path="/add" element={<AddEdit />} />
               <Route path="/update/:productId" element={<Edit />} />
               <Route path="/view/:productId" element={<View />} />
-              <Route path="/about" element={<About/>} />
+              <Route path="/about" element={<About />} />
             </Routes>
           </main>
         </BrowserRouter>

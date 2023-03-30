@@ -12,6 +12,7 @@ function Home() {
   // useState for searching for Developer Name
   const [devName, setDevName] = useState("");
 
+
   // getProducts() right away on page load
   useEffect(() => {
     getProducts();
@@ -36,13 +37,21 @@ function Home() {
     }
   };
 
-  // retrieve all Products from Backend
+  // get all Products from Backend
   const getProducts = async () => {
-    const response = await axios.get("http://localhost:5000/api/products");
-    if (response.status === 200) {
-      setData(response.data);
-    } else {
-      console.log("Server is not on or Error.");
+    try {
+      const response = await axios.get("http://localhost:5000/api/products");
+      if (response.status === 200) {
+        setData(response.data);
+      }
+    } catch (error) {
+      if (error.response.status === 404) {
+        document.getElementById(
+          "number-of-products"
+        ).innerHTML = `404 Error: Empty JSON Database`;
+      } else {
+        console.log("Server is not on or Error.");
+      }
     }
   };
 
@@ -78,16 +87,16 @@ function Home() {
 
   // clear the Searches and reload to all Products
   const handleClearSearch = () => {
-    toast.warning("Search Cleared.")
-    setScrumName("")
-    setDevName("")
-    getProducts()
-  }
+    toast.warning("Search Cleared.");
+    setScrumName("");
+    setDevName("");
+    getProducts();
+  };
 
   return (
     <div>
       <h1>Products</h1>
-      <p>Number of Products Available: {data.length}</p>
+      <p id="number-of-products">Number of Products Available: {data.length}</p>
       <div className="dashboard">
         <div className="search-table">
           {/* Scrum Master Name Search */}
@@ -133,12 +142,9 @@ function Home() {
         </div>
       </div>
       {/* Clear Button */}
-      <button
-              className="btn btn-clear search-cell"
-              onClick={handleClearSearch}
-            >
-              Clear Search
-            </button>
+      <button className="btn btn-clear search-cell" onClick={handleClearSearch}>
+        Clear Search
+      </button>
       <br />
       <table className="styled-table">
         <thead>

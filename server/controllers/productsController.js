@@ -2,6 +2,7 @@
 // initialize fs to read/write later
 const fs = require("fs")
 
+// route to get all Products (used on the Frontend's main page)
 export const getProducts = (req, res) => {
     let productsjson = fs.readFileSync("data.json", "utf-8")
     let products = JSON.parse(productsjson)
@@ -12,79 +13,45 @@ export const getProducts = (req, res) => {
         }
     })
     if(products.length === 0){
-        res.send("There are no products.")
+        // when there are no products within the JSON
+        res.status(404).send({
+            message: "There are no products."
+        })
     } else {
-        res.send(products)
+        // success, send all products
+        res.status(200).send(products)
     }
-
-    // fs.readFile("data.json", "utf8", (err, data) => {
-    //     if(err){
-    //         res.send("There was an error in fetching products. " + err)
-    //     }else{
-    //         res.send(data)
-    //     }
-    // })
-
-    // if(Object.keys(products).length !== 0){
-    //     res.send(products)
-    // } else {
-    //     res.send("No Products available.")
-    // }
 } 
 
+// route to create a new Product (used on the Frontend's /add page)
 export const createProduct = (req, res) => {
     const product = req.body
-    // save onto local obj variable products
 
-    // if(Object.keys(product).length !== 0){
-    //     products.push({ ...product, productId: uuid()})
-    //     res.send("Product Added Successfully.")
-    // } else {
-    //     res.send("Please enter some information for Product.")
-    // }
-
-    // if(Object.keys(product).length !== 0){
-    //     products.push({...product, productId: uuid()})
-    //     fs.writeFile("data.json", JSON.stringify({...product, productId: uuid()}), (err) => {
-    //         if(err){
-    //             res.send("There was an error in adding Product. Error: " + err)
-    //         } else {
-    //             res.send("Product Added Successfully.")
-    //         }
-    //     })
-    // } else {
-    //     res.send("Please enter some information for Product.")
-    // }
-
+    // check if the user entered a product object
     if(Object.keys(product).length !== 0){
+        // read json file and parse to JSON
         let productsjson = fs.readFileSync("data.json", "utf-8")
         let products = JSON.parse(productsjson)
+        // assume it is adding at the end of the file, make newId length of products + 1
         let newId = products.length + 1
+        // prevent same productId
         while(products.find((product) => product.productId == newId)){
             newId += 1
         }
+        // add product and use newId and then write to JSON file, return product
         products.push({...product, productId: newId})
         productsjson = JSON.stringify(products, null, 4)
         fs.writeFileSync("data.json", productsjson, "utf-8")
-        res.send(product)
+        res.status(201).send(product)
     } else {
         res.send("Please enter some information for Product.")
+        res.status(400).send({
+            message: "Please enter some information for Product."
+        })
     }
 }
 
 export const getProductByProductId = (req, res) => {
-    // let productsjson = fs.readFileSync("data.json", "utf-8")
-    // let products = JSON.parse(productsjson)
-    // const singleProduct = products.filter((product) => product.productId === req.params.productId)
-    // console.log(singleProduct)
-
-    // if(Object.keys(singleProduct).length !== 0){
-    //     console.log(singleProduct)
-    //     res.send(singleProduct)
-    // } else {
-    //     res.send("Product not found.")
-    // }
-
     let productsjson = fs.readFileSync("data.json", "utf-8")
     let products = JSON.parse(productsjson)
     let product = products.filter((product) => product.productId == req.params.productId)
@@ -96,19 +63,6 @@ export const getProductByProductId = (req, res) => {
 }
 
 export const deleteProductByProductId = (req, res) => {
-    // let productsjson = fs.readFileSync("data.json", "utf-8")
-    // let products = JSON.parse(productsjson)
-    // const product = products.filter((product) => product.productId == req.params.productId)
-    // console.log(req.params.productId)
-    // if(product){
-    //     products.pop(product => product.productId == req.params.productId)
-    //     productsjson = JSON.stringify(products, null, 4)
-    //     fs.writeFileSync("data.json", productsjson, "utf-8")
-    //     res.send("Product deleted.")
-    // } else {
-    //     res.send("Product not found.")
-    // }
-
     let productsjson = fs.readFileSync("data.json", "utf-8")
     let products = JSON.parse(productsjson)
     console.log(products)

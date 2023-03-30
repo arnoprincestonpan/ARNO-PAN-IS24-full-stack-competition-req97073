@@ -47,18 +47,26 @@ function AddEdit() {
 
   // use to add new product on serverside
   const addProduct = async (data) => {
-    const response = await axios.post(
-      "http://localhost:5000/api/products",
-      data
-    ).then(res => {
-      if(res.status === 200){
-        toast.success("Added Product Successfully.")
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/products",
+        data
+      );
+      if (response.status === 201) {
+        toast.success("Added Product Successfully.");
         navigate("/", 500); // head Home.js, 1/2 a second to refresh
+      } else {
+        throw new Error("Product not added.");
       }
-    }).catch(err => {
-      console.log(err)
-    })
+    } catch (error) {
+      if (error.response.status === 400) {
+        document.getElementById("title").innerHTML = `400 Error: Bad Request. Check if you've entered a Product.`
+      } 
+      console.error(error);
+      toast.error("Failed to add product.");
+    }
   };
+  
 
   // patterns to pass
   const datePattern = /^\d{4}\/(0[1-9]|1[0-2])\/(0[1-9]|[1-2][0-9]|3[0-1])$/;
@@ -97,8 +105,8 @@ function AddEdit() {
         `Developers: Please enter an Array of first name(s) and last name(s), up to 5. Format: ["Jane Doe", "James Bond"]`
       );
     } else if (
-      !state.methodology.toLowerCase() === "agile" ||
-      !state.methodology.toLowerCase() === "waterfall"
+      !(state.methodology.toLowerCase() === "agile" ||
+      state.methodology.toLowerCase() === "waterfall")
     ) {
       console.log(state.methodology);
       toast.error(`Methodology: Please enter "Agile" or "Waterfall"`);
@@ -113,7 +121,7 @@ function AddEdit() {
 
   return (
     <div>
-      <h2>Add</h2>
+      <h2 id="title">Add</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="productId">Product Id</label>
         <input 
