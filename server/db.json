@@ -19,11 +19,11 @@
         "productName": "HR Summer 2020 Management",
         "productOwnerName": "Marsden Bond",
         "Developers": [
-            "Joelle Villarreal",
-            "Price Slater",
-            "Shana Merrill",
-            "Mason Ayala",
-            "Rebekah Willis"
+            "Frances Newton",
+            "Devin David",
+            "Patrick Simmons",
+            "Nicole Brewer",
+            "Nissim Fernandez"
         ],
         "scrumMasterName": "Irma Ballard",
         "startDate": "2023/01/22",
@@ -34,11 +34,11 @@
         "productName": "HR Fall 2020 Management",
         "productOwnerName": "Violet Dickerson",
         "Developers": [
-            "Maile Mejia",
-            "Eugenia Donovan",
-            "Devin Williams",
-            "Basil Morgan",
-            "Keely Chapman"
+            "Frances Newton",
+            "Devin David",
+            "Patrick Simmons",
+            "Nicole Brewer",
+            "Nissim Fernandez"
         ],
         "scrumMasterName": "Buffy Summers",
         "startDate": "2022/09/05",
@@ -49,11 +49,11 @@
         "productName": "HR Winter 2020 Management",
         "productOwnerName": "Sasha Schneider",
         "Developers": [
-            "Rana Huber",
-            "Rhea Foreman",
-            "Juliet Calderon",
-            "Ivana Benton",
-            "Halee Erickson"
+            "Frances Newton",
+            "Devin David",
+            "Patrick Simmons",
+            "Nicole Brewer",
+            "Nissim Fernandez"
         ],
         "scrumMasterName": "Irma Ballard",
         "startDate": "2023/11/25",
@@ -79,11 +79,11 @@
         "productName": "HR Summer 2021 Management",
         "productOwnerName": "Bell Shields",
         "Developers": [
-            "Hillary Guthrie",
-            "Herman Kline",
-            "Germaine Mccoy",
-            "Deacon Eaton",
-            "Ina Lindsay"
+            "Marshall Richmond",
+            "Raymond Cunningham",
+            "Martena Holt",
+            "Ramona Hebert",
+            "Abraham Graham"
         ],
         "scrumMasterName": "Irma Ballard",
         "startDate": "2023/02/16",
@@ -94,11 +94,11 @@
         "productName": "HR Fall 2021 Management",
         "productOwnerName": "Martin Bates",
         "Developers": [
-            "Nissim Peck",
-            "Carl Vaughn",
-            "Hermione Gill",
-            "Giacomo Serrano",
-            "Abel Hawkins"
+            "Marshall Richmond",
+            "Raymond Cunningham",
+            "Martena Holt",
+            "Ramona Hebert",
+            "Abraham Graham"
         ],
         "scrumMasterName": "Shellie Macias",
         "startDate": "2023/12/08",
@@ -109,11 +109,11 @@
         "productName": "HR Winter 2021 Management",
         "productOwnerName": "Kiayada Rice",
         "Developers": [
-            "Troy Walls",
-            "Chancellor Bernard",
-            "Demetria Sweet",
-            "Amy Rosales",
-            "Kaye Bridges"
+            "Marshall Richmond",
+            "Raymond Cunningham",
+            "Martena Holt",
+            "Ramona Hebert",
+            "Abraham Graham"
         ],
         "scrumMasterName": "Irma Ballard",
         "startDate": "2023/03/24",
@@ -139,11 +139,11 @@
         "productName": "HR Summer 2022 Management",
         "productOwnerName": "Garrett Soto",
         "Developers": [
-            "Alexis Bridges",
-            "Ezekiel Wade",
-            "Herman Michael",
-            "Colleen Howard",
-            "Honorato Wade"
+            "Clinton David",
+            "Hiram Long",
+            "Jasmine Boone",
+            "Zelenia Shepard",
+            "Cora Ball"
         ],
         "scrumMasterName": "Jin Marsh",
         "startDate": "2022/09/24",
@@ -154,11 +154,11 @@
         "productName": "HR Fall 2022 Management",
         "productOwnerName": "Damon Manning",
         "Developers": [
-            "Lawrence Underwood",
-            "Porter Brown",
-            "Len Burt",
-            "Zeph Wallace",
-            "Hannah Boone"
+            "Clinton David",
+            "Hiram Long",
+            "Jasmine Boone",
+            "Zelenia Shepard",
+            "Cora Ball"
         ],
         "scrumMasterName": "Grant Mccarty",
         "startDate": "2024/01/01",
@@ -169,11 +169,11 @@
         "productName": "HR Winter 2022 Management",
         "productOwnerName": "Illana Travis",
         "Developers": [
-            "Conan Bruce",
-            "Maris Oneil",
-            "Reuben Edwards",
-            "Hayfa Sandoval",
-            "Orla Ballard"
+            "Clinton David",
+            "Hiram Long",
+            "Jasmine Boone",
+            "Zelenia Shepard",
+            "Cora Ball"
         ],
         "scrumMasterName": "Ryder Mcneil",
         "startDate": "2023/10/20",
@@ -199,11 +199,11 @@
         "productName": "Vancouver Libraries",
         "productOwnerName": "Jason Barron",
         "Developers": [
-            "Curran Wooten",
-            "Ingrid Lee",
-            "Hilel Pearson",
-            "Drew Barlow",
-            "Lana Buckner"
+            "Sebastian Horn",
+            "Oliver Reynolds",
+            "Sarah Berg",
+            "Quintessa Glenn",
+            "Quail Farmer"
         ],
         "scrumMasterName": "Kenneth Bullock",
         "startDate": "2023/07/03",
@@ -214,11 +214,11 @@
         "productName": "Richmond Libraries",
         "productOwnerName": "Echo Lewis",
         "Developers": [
-            "George Jimenez",
-            "Shelly Moran",
-            "Hakeem Ratliff",
-            "TaShya Long",
-            "Alan Sherman"
+            "Sebastian Horn",
+            "Oliver Reynolds",
+            "Sarah Berg",
+            "Quintessa Glenn",
+            "Quail Farmer"
         ],
         "scrumMasterName": "Garrett Soto",
         "startDate": "2022/05/18",
@@ -229,11 +229,11 @@
         "productName": "Burnaby Libraries",
         "productOwnerName": "Sade Shaw",
         "Developers": [
-            "Owen Silva",
-            "Illiana Wise",
-            "William Barrera",
-            "Julian Boyer",
-            "Francesca Villarreal"
+            "Sebastian Horn",
+            "Oliver Reynolds",
+            "Sarah Berg",
+            "Quintessa Glenn",
+            "Quail Farmer"
         ],
         "scrumMasterName": "Azalia Sims",
         "startDate": "2023/04/30",
@@ -259,11 +259,11 @@
         "productName": "West Vancouver Libraries",
         "productOwnerName": "Theodore Stewart",
         "Developers": [
-            "Ciaran Nelson",
-            "Samuel Yates",
-            "Sharon Bradshaw",
-            "Byron Whitley",
-            "Alana Bartlett"
+            "Rooney Reeves",
+            "Keegan Hart",
+            "Raven David",
+            "Alec Blackwell",
+            "Anastasia Haney"
         ],
         "scrumMasterName": "Troy Carrillo",
         "startDate": "2022/07/29",
@@ -274,11 +274,11 @@
         "productName": "Whistler Libraries",
         "productOwnerName": "Craig Chan",
         "Developers": [
-            "Cooper Huffman",
-            "Kim West",
-            "Chelsea Pennington",
-            "Jared Mckinney",
-            "Lynn Burch"
+            "Rooney Reeves",
+            "Keegan Hart",
+            "Raven David",
+            "Alec Blackwell",
+            "Anastasia Haney"
         ],
         "scrumMasterName": "Hannah Brennan",
         "startDate": "2024/03/09",
@@ -289,11 +289,11 @@
         "productName": "Delta Libaries",
         "productOwnerName": "Amela Hernandez",
         "Developers": [
-            "Fulton Rodriguez",
-            "Illiana Cleveland",
-            "Clio Collier",
-            "Trevor Avila",
-            "Trevor Gutierrez"
+            "Rooney Reeves",
+            "Keegan Hart",
+            "Raven David",
+            "Alec Blackwell",
+            "Anastasia Haney"
         ],
         "scrumMasterName": "Garrett Soto",
         "startDate": "2023/12/25",
@@ -319,11 +319,11 @@
         "productName": "Langley Libaries",
         "productOwnerName": "Ashely Cline",
         "Developers": [
-            "Katell Sargent",
-            "Guinevere Glover",
-            "Ava Wyatt",
-            "Prescott Solis",
-            "Brittany Burks"
+            "Jael Byers",
+            "Noelle Rocha",
+            "Omar Bowman",
+            "Dylan Horn",
+            "Lynn Navarro"
         ],
         "scrumMasterName": "Irene Osborn",
         "startDate": "2022/05/20",
@@ -334,11 +334,11 @@
         "productName": "White Rock Libaries",
         "productOwnerName": "Chadwick Pierce",
         "Developers": [
-            "Hector Brewer",
-            "Ina Cannon",
-            "Alyssa Mcmillan",
-            "Kibo Stein",
-            "Chantale Wall"
+            "Jael Byers",
+            "Noelle Rocha",
+            "Omar Bowman",
+            "Dylan Horn",
+            "Lynn Navarro"
         ],
         "scrumMasterName": "Anjolie Mcknight",
         "startDate": "2024/03/17",
@@ -349,11 +349,11 @@
         "productName": "Coquitlam Libaries",
         "productOwnerName": "Armando Vang",
         "Developers": [
-            "Teegan Poole",
-            "Alvin Rhodes",
-            "Bert Lester",
-            "Odette Travis",
-            "Echo Ford"
+            "Jael Byers",
+            "Noelle Rocha",
+            "Omar Bowman",
+            "Dylan Horn",
+            "Lynn Navarro"
         ],
         "scrumMasterName": "Noble Reed",
         "startDate": "2022/04/22",
@@ -379,11 +379,11 @@
         "productName": "Port Moody Libaries",
         "productOwnerName": "Walker Fisher",
         "Developers": [
-            "Rhoda Hahn",
-            "Kristen Curtis",
-            "August Snyder",
-            "Sade Adkins",
-            "Willow Flynn"
+            "Rhea Barton",
+            "Sydney Ford",
+            "Nissim Dunlap",
+            "Colton Graves",
+            "Lillian Mckinney"
         ],
         "scrumMasterName": "Caldwell Lara",
         "startDate": "2022/09/01",
@@ -394,11 +394,11 @@
         "productName": "Abbotsford Libaries",
         "productOwnerName": "Griffin Espinoza",
         "Developers": [
-            "Keefe Greer",
-            "Brooke Bartlett",
-            "Quinn Phillips",
-            "Azalia Fernandez",
-            "Naomi Hines"
+            "Rhea Barton",
+            "Sydney Ford",
+            "Nissim Dunlap",
+            "Colton Graves",
+            "Lillian Mckinney"
         ],
         "scrumMasterName": "Conan Garza",
         "startDate": "2022/12/02",
@@ -409,11 +409,11 @@
         "productName": "Chilliwack Libaries",
         "productOwnerName": "Hakeem Beard",
         "Developers": [
-            "Minerva Harrell",
-            "Ruth Thompson",
-            "Jermaine Sanchez",
-            "Sean Richards",
-            "Hadassah Leblanc"
+            "Rhea Barton",
+            "Sydney Ford",
+            "Nissim Dunlap",
+            "Colton Graves",
+            "Lillian Mckinney"
         ],
         "scrumMasterName": "Ishmael Ortega",
         "startDate": "2022/06/10",
@@ -439,11 +439,11 @@
         "productName": "Kelowna Libaries",
         "productOwnerName": "Hiram Fuller",
         "Developers": [
-            "Pandora Arnold",
-            "Imelda Peck",
-            "Catherine Gallagher",
-            "Neil Savage",
-            "Ramona Juarez"
+            "Naomi Cantu",
+            "Frances Wyatt",
+            "Harlan Mcpherson",
+            "Sydnee Anthony",
+            "Madeson Watkins"
         ],
         "scrumMasterName": "Rylee Orr",
         "startDate": "2023/09/16",
@@ -454,11 +454,11 @@
         "productName": "Meritt Libaries",
         "productOwnerName": "Rhonda Mcmahon",
         "Developers": [
-            "Cecilia Kirkland",
-            "Dara Curtis",
-            "Rhiannon Hobbs",
-            "Sopoline Reese",
-            "Xander Pace"
+            "Naomi Cantu",
+            "Frances Wyatt",
+            "Harlan Mcpherson",
+            "Sydnee Anthony",
+            "Madeson Watkins"
         ],
         "scrumMasterName": "Warren Guthrie",
         "startDate": "2023/10/28",
@@ -469,11 +469,11 @@
         "productName": "Prince George Libaries",
         "productOwnerName": "Burton Mendez",
         "Developers": [
-            "Azalia Brennan",
-            "Prescott Flowers",
-            "Clark Chan",
-            "Priscilla Hartman",
-            "Shad Pollard"
+            "Naomi Cantu",
+            "Frances Wyatt",
+            "Harlan Mcpherson",
+            "Sydnee Anthony",
+            "Madeson Watkins"
         ],
         "scrumMasterName": "Ciaran Holloway",
         "startDate": "2023/05/05",
@@ -499,11 +499,11 @@
         "productName": "BC Civil Services",
         "productOwnerName": "Dale Duffy",
         "Developers": [
-            "Henry Tate",
-            "Edward Black",
-            "Noah Elliott",
-            "Isaiah Munoz",
-            "Bernard Bray"
+            "Nelle Jacobson",
+            "Chloe Wyatt",
+            "Lars Duke",
+            "Chadwick Bullock",
+            "Jerome Owens"
         ],
         "scrumMasterName": "Phyllis Mcgee",
         "startDate": "2022/07/23",
@@ -514,11 +514,11 @@
         "productName": "BC Immigrations",
         "productOwnerName": "Harlan Saunders",
         "Developers": [
-            "Alea Townsend",
-            "Chloe Holloway",
-            "Anne Rodriguez",
-            "Cathleen Sullivan",
-            "Adrian Estrada"
+            "Nelle Jacobson",
+            "Chloe Wyatt",
+            "Lars Duke",
+            "Chadwick Bullock",
+            "Jerome Owens"
         ],
         "scrumMasterName": "Sean Rutledge",
         "startDate": "2023/01/24",
@@ -529,11 +529,11 @@
         "productName": "BC Internal Services",
         "productOwnerName": "Baxter Little",
         "Developers": [
-            "Basil Terry",
-            "Cullen Roth",
-            "Roary Hays",
-            "Keegan Olsen",
-            "Kiayada Hubbard"
+            "Nelle Jacobson",
+            "Chloe Wyatt",
+            "Lars Duke",
+            "Chadwick Bullock",
+            "Jerome Owens"
         ],
         "scrumMasterName": "Quemby Woods",
         "startDate": "2023/10/26",
@@ -559,11 +559,11 @@
         "productName": "BC Forestry Fires Prevention",
         "productOwnerName": "Meredith Gray",
         "Developers": [
-            "August Fields",
-            "Denise Peters",
-            "Kylee Barton",
-            "Scarlet Craig",
-            "Larissa Salas"
+            "Madonna Peters",
+            "Carter Green",
+            "Drake Finch",
+            "Danielle Jordan",
+            "Shelley Dominguez"
         ],
         "scrumMasterName": "Tanner Simon",
         "startDate": "2023/05/30",
@@ -574,11 +574,11 @@
         "productName": "BC Public Health and Safety",
         "productOwnerName": "Dana Wilder",
         "Developers": [
-            "Jayme Nixon",
-            "Gavin Pearson",
-            "Priscilla Kirk",
-            "Melodie Mccarthy",
-            "Raja Watson"
+            "Madonna Peters",
+            "Carter Green",
+            "Drake Finch",
+            "Danielle Jordan",
+            "Shelley Dominguez"
         ],
         "scrumMasterName": "Josephine Stone",
         "startDate": "2024/01/08",
@@ -589,11 +589,11 @@
         "productName": "BC Sports and Recreation",
         "productOwnerName": "Daryl Hendricks",
         "Developers": [
-            "Lareina Sampson",
-            "Karina Everett",
-            "Wayne Christensen",
-            "Sopoline Dickerson",
-            "Slade Adams"
+            "Madonna Peters",
+            "Carter Green",
+            "Drake Finch",
+            "Danielle Jordan",
+            "Shelley Dominguez"
         ],
         "scrumMasterName": "Leah Mckinney",
         "startDate": "2023/07/11",

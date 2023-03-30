@@ -9,6 +9,8 @@ function Home() {
   const [data, setData] = useState([]);
   // useState for searching for Scrum Master Name
   const [scrumName, setScrumName] = useState("");
+  // useState for searching for Developer Name
+  const [devName, setDevName] = useState("");
 
   // getProducts() right away on page load
   useEffect(() => {
@@ -45,15 +47,12 @@ function Home() {
   };
 
   // filter Products from Frontend, for Scrum Master Name
-  const handleSearch = () => {
-    console.log(data);
-    console.log(scrumName);
+  const handleScrumSearch = () => {
     const filteredData = data.filter((product) =>
       product.scrumMasterName.toLowerCase().includes(scrumName.toLowerCase())
     );
-    console.log(filteredData);
     if (filteredData.length === 0) {
-      toast.warning("Nothing found.");
+      toast.warning(`${scrumName} not found.`);
       getProducts();
     } else {
       toast.success("Congrats. Here are the results for: " + scrumName);
@@ -61,20 +60,86 @@ function Home() {
     }
   };
 
+  // filter Products from Frontend, for Developer Name
+  const handleDevSearch = () => {
+    const filteredData = data.filter((product) =>
+      product.Developers.some((developer) =>
+        developer.toLowerCase().includes(devName.toLowerCase())
+      )
+    );
+    if (filteredData.length === 0) {
+      toast.warning(`${devName} not found.`);
+      getProducts();
+    } else {
+      toast.success("Congrats. Here are the results for: " + devName);
+      setData(filteredData);
+    }
+  };
+
+  // clear the Searches and reload to all Products
+  const handleClearSearch = () => {
+    toast.warning("Search Cleared.")
+    setScrumName("")
+    setDevName("")
+    getProducts()
+  }
+
   return (
     <div>
       <h1>Products</h1>
       <p>Number of Products Available: {data.length}</p>
-      <div></div>
-      <label htmlFor="searchScrum">Scrum Master Name: </label>
-      <input
-        type="type"
-        id="searchScrum"
-        name="searchScrum"
-        value={scrumName}
-        onChange={(e) => setScrumName(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
+      <div className="dashboard">
+        <div className="search-table">
+          {/* Scrum Master Name Search */}
+          <div className="search-row">
+            <label className="search-cell" htmlFor="searchScrum">
+              Scrum Master Name:{" "}
+            </label>
+            <input
+              className="search-cell"
+              type="text"
+              id="searchScrum"
+              name="searchScrum"
+              value={scrumName}
+              onChange={(e) => setScrumName(e.target.value)}
+            />
+            <button
+              className="btn btn-search search-cell"
+              onClick={handleScrumSearch}
+            >
+              Search
+            </button>
+          </div>
+          {/* Developer Name Search */}
+          <div className="search-row">
+            <label className="search-cell" htmlFor="searchDeveloper">
+              Developer Name:{" "}
+            </label>
+            <input
+              className="search-cell"
+              type="text"
+              id="searchDeveloper"
+              name="searchDeveloper"
+              value={devName}
+              onChange={(e) => setDevName(e.target.value)}
+            />
+            <button
+              className="btn btn-search search-cell"
+              onClick={handleDevSearch}
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+      {/* Clear Button */}
+      <button
+              className="btn btn-clear search-cell"
+              onClick={handleClearSearch}
+            >
+              Clear Search
+            </button>
+      <br />
       <table className="styled-table">
         <thead>
           <tr>

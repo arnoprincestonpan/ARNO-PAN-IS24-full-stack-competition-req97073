@@ -1,3 +1,23 @@
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* display using css tables */
+
+.search-table {
+    display: table;
+}
+
+.search-row {
+    display: table-row;
+}
+
+.search-cell {
+    display: table-cell
+}
+
 .styled-table {
     border-collapse: collapse;
     border: 1px solid whitesmoke;
@@ -50,4 +70,16 @@
 .btn-view {
     background-color: lightblue;
     color: black;
+}
+
+.btn-search {
+    background-color: #e3a82b;
+}
+
+.btn-clear {
+    background-color: orangered;
+}
+
+.btn:hover {
+    background-color: grey;
 }
