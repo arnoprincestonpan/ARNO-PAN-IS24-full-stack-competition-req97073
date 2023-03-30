@@ -60,18 +60,16 @@ export const createProduct = (req, res) => {
         let productsjson = fs.readFileSync("data.json", "utf-8")
         let products = JSON.parse(productsjson)
         let newId = products.length + 1
-        if(products.filter((product) => product.productId == newId)){
-            newId++
+        while(products.find((product) => product.productId == newId)){
+            newId += 1
         }
-        products.push({...product, productId: products.length + 1})
+        products.push({...product, productId: newId})
         productsjson = JSON.stringify(products, null, 4)
         fs.writeFileSync("data.json", productsjson, "utf-8")
         res.send(product)
     } else {
         res.send("Please enter some information for Product.")
     }
-
-    
 }
 
 export const getProductByProductId = (req, res) => {

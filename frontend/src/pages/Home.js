@@ -5,12 +5,17 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 function Home() {
+  // useState for products data
   const [data, setData] = useState([]);
+  // useState for searching for Scrum Master Name
+  const [scrumName, setScrumName] = useState("");
 
+  // getProducts() right away on page load
   useEffect(() => {
     getProducts();
   }, []);
 
+  // onDeleteProduct, find the productId and remove from Backend
   const onDeleteProduct = async (productId) => {
     if (window.confirm("Are you sure you want to delete the Product?")) {
       const response = await axios
@@ -39,10 +44,37 @@ function Home() {
     }
   };
 
+  // filter Products from Frontend, for Scrum Master Name
+  const handleSearch = () => {
+    console.log(data);
+    console.log(scrumName);
+    const filteredData = data.filter((product) =>
+      product.scrumMasterName.toLowerCase().includes(scrumName.toLowerCase())
+    );
+    console.log(filteredData);
+    if (filteredData.length === 0) {
+      toast.warning("Nothing found.");
+      getProducts();
+    } else {
+      toast.success("Congrats. Here are the results for: " + scrumName);
+      setData(filteredData);
+    }
+  };
+
   return (
     <div>
       <h1>Products</h1>
       <p>Number of Products Available: {data.length}</p>
+      <div></div>
+      <label htmlFor="searchScrum">Scrum Master Name: </label>
+      <input
+        type="type"
+        id="searchScrum"
+        name="searchScrum"
+        value={scrumName}
+        onChange={(e) => setScrumName(e.target.value)}
+      />
+      <button onClick={handleSearch}>Search</button>
       <table className="styled-table">
         <thead>
           <tr>

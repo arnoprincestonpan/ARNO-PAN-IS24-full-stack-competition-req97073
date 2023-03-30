@@ -1,5 +1,20 @@
 [
     {
+        "productId": 1,
+        "productName": "HR Spring 2020 Management",
+        "productOwnerName": "Ila Hill",
+        "Developers": [
+            "Frances Newton",
+            "Devin David",
+            "Patrick Simmons",
+            "Nicole Brewer",
+            "Nissim Fernandez"
+        ],
+        "scrumMasterName": "Garrett Soto",
+        "startDate": "2022/06/25",
+        "methodology": "Agile"
+    },
+    {
         "productId": 2,
         "productName": "HR Summer 2020 Management",
         "productOwnerName": "Marsden Bond",
@@ -40,7 +55,7 @@
             "Ivana Benton",
             "Halee Erickson"
         ],
-        "scrumMasterName": "Brandon Fleming",
+        "scrumMasterName": "Irma Ballard",
         "startDate": "2023/11/25",
         "methodology": "Agile"
     },
@@ -55,7 +70,7 @@
             "Ramona Hebert",
             "Abraham Graham"
         ],
-        "scrumMasterName": "Kirby Bradley",
+        "scrumMasterName": "Garrett Soto",
         "startDate": "2023/01/24",
         "methodology": "Agile"
     },
@@ -70,7 +85,7 @@
             "Deacon Eaton",
             "Ina Lindsay"
         ],
-        "scrumMasterName": "Yuri Daniels",
+        "scrumMasterName": "Irma Ballard",
         "startDate": "2023/02/16",
         "methodology": "Agile"
     },
@@ -100,7 +115,7 @@
             "Amy Rosales",
             "Kaye Bridges"
         ],
-        "scrumMasterName": "Otto Colon",
+        "scrumMasterName": "Irma Ballard",
         "startDate": "2023/03/24",
         "methodology": "Agile"
     },
@@ -122,7 +137,7 @@
     {
         "productId": 10,
         "productName": "HR Summer 2022 Management",
-        "productOwnerName": "Kylynn Osborn",
+        "productOwnerName": "Garrett Soto",
         "Developers": [
             "Alexis Bridges",
             "Ezekiel Wade",
@@ -205,7 +220,7 @@
             "TaShya Long",
             "Alan Sherman"
         ],
-        "scrumMasterName": "Daryl White",
+        "scrumMasterName": "Garrett Soto",
         "startDate": "2022/05/18",
         "methodology": "Waterfall"
     },
@@ -280,7 +295,7 @@
             "Trevor Avila",
             "Trevor Gutierrez"
         ],
-        "scrumMasterName": "Debra Golden",
+        "scrumMasterName": "Garrett Soto",
         "startDate": "2023/12/25",
         "methodology": "Waterfall"
     },
@@ -583,20 +598,5 @@
         "scrumMasterName": "Leah Mckinney",
         "startDate": "2023/07/11",
         "methodology": "Waterfall"
-    },
-    {
-        "productId": 1,
-        "productName": "HR Spring 2020",
-        "productOwnerName": "Ila Hill",
-        "Developers": [
-            "Frances Newton",
-            "Devin David",
-            "Patrick Simmons",
-            "Nicole Brewer",
-            "Nissim Fernandez"
-        ],
-        "scrumMasterName": "Garrett Soto",
-        "startDate": "2022/06/25",
-        "methodology": "Agile"
     }
 ]
