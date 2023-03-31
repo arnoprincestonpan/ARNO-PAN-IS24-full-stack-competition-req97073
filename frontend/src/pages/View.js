@@ -4,21 +4,39 @@ import axios from "axios"
 import "./View.css"
 
 function View() {
+  // initialize product useState
   const [product, setProduct] = useState(null)
-
+  // get previous page's productId with useParams()
   const { productId } = useParams()
 
+  // fetch the Product with the productId
   useEffect(() => {
     const fetchProduct = async() => {
       try {
         const response = await axios.get(`http://localhost:5000/api/product/${productId}`)
         console.log(response.data)
-        setProduct(response.data[0])
+        if(response.status === 200 && Array.isArray(response.data) && response.data.length > 0) {
+          setProduct(response.data[0])
+        } else {
+          console.error("Error: Invalid response data.")
+        }
       } catch (error) {
         console.error(error)
+        // set to empty not found Product
+        setProduct({
+          productId: `${productId} not found.`,
+          productName: "Blank",
+          productOwnerName: "Blank",
+          Developers: ["Blank"],
+          scrumMasterName: "Blank",
+          startDate: "Blank",
+          methodology: "Blank"
+        })
       }
     }
-    fetchProduct()
+    if(productId){
+      fetchProduct()
+    }
   }, [productId])
 
   return (

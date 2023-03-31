@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import "./AddEdit.css";
+import "./Add.css";
 import { toast } from "react-toastify";
 
 function AddEdit() {
@@ -24,20 +24,23 @@ function AddEdit() {
   // initialize useParams to retrieve productId
   const {productId} = useParams()
 
+  // get the single Product with a productId
   const getSingleProduct = async(productId) => {
-    const response = await axios
-    .get(`http://localhost:5000/api/product/` + productId)
-    .then((res) => {
-      if (res.status === 200) {
-        console.log(productId)
-        setState(res.data[0])      
+    try {
+      const response = await axios
+      .get(`http://localhost:5000/api/product/` + productId)
+      if(response.status === 200){
+        setState(response.data[0])
+      } else {
+        throw new Error("Product not found.")
       }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    } catch(error) {
+      console.error(error)
+      toast.error("Failed to find product.")
+    }
   }
 
+  // make sure to grab product if the productId exists
   useEffect(() => {
     if(productId) {
       console.log(productId)

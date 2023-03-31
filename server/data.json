@@ -1,50 +1,5 @@
 [
     {
-        "productId": 1,
-        "productName": "HR Spring 2020 Management",
-        "productOwnerName": "Ila Hill",
-        "Developers": [
-            "Frances Newton",
-            "Devin David",
-            "Patrick Simmons",
-            "Nicole Brewer",
-            "Nissim Fernandez"
-        ],
-        "scrumMasterName": "Garrett Soto",
-        "startDate": "2022/06/25",
-        "methodology": "Agile"
-    },
-    {
-        "productId": 2,
-        "productName": "HR Summer 2020 Management",
-        "productOwnerName": "Marsden Bond",
-        "Developers": [
-            "Frances Newton",
-            "Devin David",
-            "Patrick Simmons",
-            "Nicole Brewer",
-            "Nissim Fernandez"
-        ],
-        "scrumMasterName": "Irma Ballard",
-        "startDate": "2023/01/22",
-        "methodology": "Agile"
-    },
-    {
-        "productId": 3,
-        "productName": "HR Fall 2020 Management",
-        "productOwnerName": "Violet Dickerson",
-        "Developers": [
-            "Frances Newton",
-            "Devin David",
-            "Patrick Simmons",
-            "Nicole Brewer",
-            "Nissim Fernandez"
-        ],
-        "scrumMasterName": "Buffy Summers",
-        "startDate": "2022/09/05",
-        "methodology": "Waterfall"
-    },
-    {
         "productId": 4,
         "productName": "HR Winter 2020 Management",
         "productOwnerName": "Sasha Schneider",
@@ -118,21 +73,6 @@
         "scrumMasterName": "Irma Ballard",
         "startDate": "2023/03/24",
         "methodology": "Agile"
-    },
-    {
-        "productId": 9,
-        "productName": "HR Spring 2022 Management",
-        "productOwnerName": "Wallace Marks",
-        "Developers": [
-            "Clinton David",
-            "Hiram Long",
-            "Jasmine Boone",
-            "Zelenia Shepard",
-            "Cora Ball"
-        ],
-        "scrumMasterName": "Kristen Franco",
-        "startDate": "2023/02/09",
-        "methodology": "Waterfall"
     },
     {
         "productId": 10,
@@ -600,15 +540,57 @@
         "methodology": "Waterfall"
     },
     {
-        "productName": "Arno Pan",
-        "productOwnerName": "Arno Pan",
+        "productId": 3,
+        "productName": "HR Fall 2020 Management",
+        "productOwnerName": "Violet Dickerson",
         "Developers": [
-            "Edward Pan",
-            " Edward Jones"
+            "Frances Newton",
+            "Devin David",
+            "Patrick Simmons",
+            "Nicole Brewer",
+            "Nissim Fernandez"
         ],
-        "scrumMasterName": "Natalie Portman",
-        "startDate": "2013/08/08",
-        "methodology": "Agile",
-        "productId": 41
+        "scrumMasterName": "Buffy Summers",
+        "startDate": "2022/09/05",
+        "methodology": "Agile"
+    },
+    {
+        "productId": 9,
+        "productName": "HR Spring 2022 Management",
+        "productOwnerName": "Wallace Marks",
+        "Developers": [
+            "Clinton David",
+            "Hiram Long",
+            "Jasmine Boone",
+            "Zelenia Shepard",
+            "Cora Ball"
+        ],
+        "scrumMasterName": "Kristen Franco",
+        "startDate": "2023/02/09",
+        "methodology": "Agile"
+    },
+    {
+        "productId": 2,
+        "productName": "House of the Dragon",
+        "productOwnerName": "Edward Pan",
+        "Developers": [
+            "Arno Pan",
+            "Edward Pan"
+        ],
+        "scrumMasterName": "Ryan J. Condal",
+        "startDate": "2023/03/24",
+        "methodology": "Waterfall"
+    },
+    {
+        "productId": 1,
+        "productName": "House of the Dragon",
+        "productOwnerName": "Edward Pan",
+        "Developers": [
+            "Arno Pan",
+            "Edward Pan"
+        ],
+        "scrumMasterName": "Ryan J. Condal",
+        "startDate": "2023/03/24",
+        "methodology": "Waterfall"
     }
 ]

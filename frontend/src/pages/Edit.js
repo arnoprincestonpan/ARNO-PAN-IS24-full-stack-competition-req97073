@@ -22,42 +22,64 @@ function Edit() {
   const navigate = useNavigate();
 
   // initialize useParams to retrieve productId
-  const {productId} = useParams()
+  const { productId } = useParams();
 
-  const getSingleProduct = async(productId) => {
+  // get a single product via the productId
+  const getSingleProduct = async (productId) => {
     const response = await axios
-    .get(`http://localhost:5000/api/product/` + productId)
-    .then((res) => {
-      if (res.status === 200) {
-        console.log(productId)
-        setState(res.data[0])      
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  }
+      .get(`http://localhost:5000/api/product/` + productId)
+      .then((res) => {
+        if (res.status === 200) {
+          console.log(productId);
+          setState(res.data[0]);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-  const updateSingleProduct = async(state) => {
-    const response = await axios
-    .put(`http://localhost:5000/api/product/${productId}`, state)
-    .then(res => {
-      if(res.status === 200){
-        toast.success("Editted Product Successfully.")
-        // navigate("/", 500); // head Home.js, 1/2 a second to refresh
-        navigate(`/view/${productId}`, 500)
-      }
-    }).catch(err => {
-      console.log(err)
-    })
-  }
+  // const updateSingleProduct = async(state) => {
+  //   const response = await axios
+  //   .put(`http://localhost:5000/api/product/${productId}`, state)
+  //   .then(res => {
+  //     if(res.status === 200){
+  //       toast.success("Editted Product Successfully.")
+  //       navigate(`/view/${productId}`, 500)
+  //     }
+  //   }).catch(err => {
+  //     console.log(err)
+  //   })
+  // }
 
-  useEffect(() => {
-    if(productId) {
-      console.log(productId)
-      getSingleProduct(productId)
+  // update the singleProduct via the productId
+  const updateSingleProduct = async (state) => {
+    try {
+      const response = await axios.put(
+        `http://localhost:5000/api/products/${productId}`,
+        state
+      );
+      if (response.status === 200) {
+        toast.success("Product Updated Successfully.");
+        navigate(`/view/${productId}`, 500);
+      } 
+    } catch (error) {
+      console.error(error);
+      if (error.response.status === 404) {
+        toast.warning("Product not Found. No Update applied.")
+      } else {
+        toast.error("Failed to update product.");
+      }
     }
-  }, [productId])
+  };
+
+  // if productId exists then we get the Product
+  useEffect(() => {
+    if (productId) {
+      console.log(productId);
+      getSingleProduct(productId);
+    }
+  }, [productId]);
 
   // patterns to pass
   const datePattern = /^\d{4}\/(0[1-9]|1[0-2])\/(0[1-9]|[1-2][0-9]|3[0-1])$/;
@@ -75,7 +97,7 @@ function Edit() {
       !state.methodology
     ) {
       toast.error("Please provide values into each input field(s).");
-    } else if (!typeof(state.productName) == "string") {
+    } else if (!typeof state.productName == "string") {
       toast.error(
         "Product Name: Please enter strings only. i.e. St. Paul's Cathedral"
       );
@@ -96,8 +118,10 @@ function Edit() {
         `Developers: Please enter an Array of first name(s) and last name(s), up to 5. Format: ["Jane Doe", "James Bond"]`
       );
     } else if (
-      !state.methodology.toLowerCase() === "agile" ||
-      !state.methodology.toLowerCase() === "waterfall"
+      !(
+        state.methodology.toLowerCase() === "agile" ||
+        state.methodology.toLowerCase() === "waterfall"
+      )
     ) {
       console.log(state.methodology);
       toast.error(`Methodology: Please enter "Agile" or "Waterfall"`);
@@ -116,7 +140,7 @@ function Edit() {
       <h2>Edit</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="productId">Product Id</label>
-        <input 
+        <input
           type="number"
           id="productId"
           name="productId"

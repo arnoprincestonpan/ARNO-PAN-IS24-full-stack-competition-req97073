@@ -1,4 +1,3 @@
-
 // initialize fs to read/write later
 const fs = require("fs")
 
@@ -26,8 +25,7 @@ export const getProducts = (req, res) => {
 // route to create a new Product (used on the Frontend's /add page)
 export const createProduct = (req, res) => {
     const product = req.body
-
-    // check if the user entered a product object
+    // check if the user entered a product object that is not empty
     if(Object.keys(product).length !== 0){
         // read json file and parse to JSON
         let productsjson = fs.readFileSync("data.json", "utf-8")
@@ -44,40 +42,55 @@ export const createProduct = (req, res) => {
         fs.writeFileSync("data.json", productsjson, "utf-8")
         res.status(201).send(product)
     } else {
-        res.send("Please enter some information for Product.")
+        // notify error 400 Bad Request, no information entered
         res.status(400).send({
             message: "Please enter some information for Product."
         })
     }
 }
 
+// route to grab one single Product via productId
 export const getProductByProductId = (req, res) => {
+    // read json file and parse to JSON
     let productsjson = fs.readFileSync("data.json", "utf-8")
     let products = JSON.parse(productsjson)
     let product = products.filter((product) => product.productId == req.params.productId)
     if(Object.keys(product).length !== 0){
-        res.send(product)
+        // found, send back Product
+        res.status(200).send(product)
     } else {
-        res.send("Product not found.")
+        // not found, send back 404
+        res.status(404).send({
+            message: "Product not found."
+        })
     }
 }
 
+// route to delete Product by productId
 export const deleteProductByProductId = (req, res) => {
+    // read json file and parse to JSON
     let productsjson = fs.readFileSync("data.json", "utf-8")
     let products = JSON.parse(productsjson)
-    console.log(products)
     const singleProduct = products.filter((product) => product.productId == req.params.productId)[0]
     if(Object.keys(singleProduct).length !== 0){
+        // found singleProduct, now remove it and write it onto JSON File, send success status
         products = products.filter(product => product.productId !== singleProduct.productId)
         productsjson = JSON.stringify(products, null, 4)
         fs.writeFileSync("data.json", productsjson, "utf-8")
-        res.send("Product Successfully Deleted.")
+        res.status(200).send({
+            message: "Product successfully deleted."
+        })
     } else {
-        res.send("Product Not Found.")
+        // didn't find single Product, send not found status
+        res.status(404).send({
+            message: "Product not found."
+        })
     }
 }
 
+// route to update Product by productId
 export const updateProductByProductId = (req, res) => {
+    // read json file and parse to JSON
     let productsjson = fs.readFileSync("data.json", "utf-8")
     let products = JSON.parse(productsjson)
     const singleProduct = products.filter((product) => product.productId == req.params.productId)[0]
@@ -98,8 +111,8 @@ export const updateProductByProductId = (req, res) => {
         productsjson = JSON.stringify(products, null, 4)
         fs.writeFileSync("data.json", productsjson, "utf-8")
 
-        res.send("Product updated.")
+        res.status(200).send("Product updated.")
     } else {
-        res.send("Product not found.")
+        res.status(404).send("Product not found.")
     }
 }
