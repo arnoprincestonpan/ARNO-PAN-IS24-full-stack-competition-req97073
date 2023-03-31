@@ -1,13 +1,13 @@
 # ARNO-PAN-IS24-full-stack-competition-req97073
 
-Candidate: Arno Princeston Pan
+Candidate: Arno Princeston Pan  
 Contact: pan.arno@gmail.com
 
 ## Introduction
 
 ### Story Line
 
-After reading Lisa(director)'s and Alan(DevOps)'s user stories, a solution was created by Arno Pan. It is a full stack website that has a landing page that retrieves all products available with the data and title requested (Product Number, Product Name, Scrum Master Name, Product Owner Name, Developer Names, Start Date, Methodology). It has other sub-pages for adding products, updating products and an about page. The product is now presented to Lisa and Alan to test for review.
+After reading Lisa(director)'s and Alan(DevOps)'s user stories, a solution was created by Arno Pan. It is a full stack website that has a landing page that retrieves all products available with the data and title requested (Product Number, Product Name, Scrum Master Name, Product Owner Name, Developer Names, Start Date, Methodology). The website can be used to update/edit/delete a product. The product is now presented to Lisa and Alan to test for review.
 
 ### Getting Started
 
@@ -83,9 +83,6 @@ npm start
 ###### Add Product
 1. Click Add Product on the header component. (Next to the top right of the page)
 2. Enter Product information on all the fields. 
-
-###### About 
-1. Click About on the header component.
 
 Note:
 i. Use the latest browser. i.e. Google Chrome, Microsoft Edge, or Mozilla Firefox

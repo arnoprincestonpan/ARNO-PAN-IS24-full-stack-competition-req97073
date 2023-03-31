@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "./Add.css";
 import { toast } from "react-toastify";
@@ -36,7 +36,11 @@ function AddEdit() {
       }
     } catch(error) {
       console.error(error)
-      toast.error("Failed to find product.")
+      if(error.response.status === 404) {
+        toast.error("Product not found.")
+      } else {
+        toast.error("Failed to find product.")
+      }
     }
   }
 
@@ -87,7 +91,7 @@ function AddEdit() {
       !state.methodology
     ) {
       toast.error("Please provide values into each input field(s).");
-    } else if (!typeof(state.productName) == "string") {
+    } else if (!typeof(state.productName) === "string") {
       toast.error(
         "Product Name: Please enter strings only. i.e. St. Paul's Cathedral"
       );
@@ -100,10 +104,10 @@ function AddEdit() {
         "Scrum Master Name: Please enter a first and a last name, with only their first letters capitalized."
       );
     } else if (state.Developers.length > 5) {
-      console.log(state.Developers);
       toast.error("Developers: Please enter less than 5 developers.");
+    } else if (state.Developers.length === 0) {
+      toast.error("You have entered no developers.")
     } else if (!Array.isArray(state.Developers)) {
-      console.log(state.Developers);
       toast.error(
         `Developers: Please enter an Array of first name(s) and last name(s), up to 5. Format: ["Jane Doe", "James Bond"]`
       );
@@ -124,6 +128,7 @@ function AddEdit() {
 
   return (
     <div>
+      <p><Link to="/">Home</Link> &gt; Add</p>
       <h2 id="title">Add</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="productId">Product Id</label>

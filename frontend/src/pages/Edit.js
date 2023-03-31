@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "./Edit.css";
 import { toast } from "react-toastify";
@@ -25,32 +25,24 @@ function Edit() {
   const { productId } = useParams();
 
   // get a single product via the productId
-  const getSingleProduct = async (productId) => {
-    const response = await axios
+  const getSingleProduct = async(productId) => {
+    try {
+      const response = await axios
       .get(`http://localhost:5000/api/product/` + productId)
-      .then((res) => {
-        if (res.status === 200) {
-          console.log(productId);
-          setState(res.data[0]);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  // const updateSingleProduct = async(state) => {
-  //   const response = await axios
-  //   .put(`http://localhost:5000/api/product/${productId}`, state)
-  //   .then(res => {
-  //     if(res.status === 200){
-  //       toast.success("Editted Product Successfully.")
-  //       navigate(`/view/${productId}`, 500)
-  //     }
-  //   }).catch(err => {
-  //     console.log(err)
-  //   })
-  // }
+      if(response.status === 200){
+        setState(response.data[0])
+      } else {
+        throw new Error("Product not found.")
+      }
+    } catch(error) {
+      console.error(error)
+      if(error.response.status === 404) {
+        toast.error("Product not found.")
+      } else {
+        toast.error("Failed to find product.")
+      }
+    }
+  }
 
   // update the singleProduct via the productId
   const updateSingleProduct = async (state) => {
@@ -85,8 +77,9 @@ function Edit() {
   const datePattern = /^\d{4}\/(0[1-9]|1[0-2])\/(0[1-9]|[1-2][0-9]|3[0-1])$/;
   const namePattern = /^[A-Z][a-z]+ [A-Z][a-z]+$/;
 
-  // prevent browser defaults
+  // filter submission data
   const handleSubmit = (e) => {
+     // prevent browser defaults
     e.preventDefault();
     if (
       !state.productName ||
@@ -97,7 +90,7 @@ function Edit() {
       !state.methodology
     ) {
       toast.error("Please provide values into each input field(s).");
-    } else if (!typeof state.productName == "string") {
+    } else if (!typeof state.productName === "string") {
       toast.error(
         "Product Name: Please enter strings only. i.e. St. Paul's Cathedral"
       );
@@ -110,10 +103,10 @@ function Edit() {
         "Scrum Master Name: Please enter a first and a last name, with only their first letters capitalized."
       );
     } else if (state.Developers.length > 5) {
-      console.log(state.Developers);
       toast.error("Developers: Please enter less than 5 developers.");
+    } else if (state.Developers.length === 0) {
+      toast.error("You have entered no developers.")
     } else if (!Array.isArray(state.Developers)) {
-      console.log(state.Developers);
       toast.error(
         `Developers: Please enter an Array of first name(s) and last name(s), up to 5. Format: ["Jane Doe", "James Bond"]`
       );
@@ -136,7 +129,7 @@ function Edit() {
 
   return (
     <div>
-      <p>Home &gt; Edit</p>
+      <p><Link to="/">Home</Link> &gt; Edit</p>
       <h2>Edit</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="productId">Product Id</label>
