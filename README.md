@@ -11,6 +11,13 @@ After reading Lisa(director)'s and Alan(DevOps)'s user stories, a solution was c
 
 ### Getting Started
 
+#### Technology
+- JavaScript
+- HTML
+- CSS
+- Node.js (Please install Node.js if your system doesn't have it.)
+- React.js
+
 #### Cloning
 
 1. Clone this repository
