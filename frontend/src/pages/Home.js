@@ -18,22 +18,26 @@ function Home() {
     getProducts();
   }, []);
 
-  // onDeleteProduct, find the productId and remove from Backend
+   // onDeleteProduct, find the productId and remove from Backend
   const onDeleteProduct = async (productId) => {
-    if (window.confirm("Are you sure you want to delete the Product?")) {
-      const response = await axios
-        .delete(`http://localhost:5000/api/product/` + productId)
-        .then((res) => {
-          if (res.status === 200) {
+    try {
+      if (window.confirm("Are you sure you want to delete the Product?")) {
+        const response = await axios
+          .delete(`http://localhost:5000/api/product/` + productId)
+          if (response.status === 200) {
             toast.success(
               "Deleted Product Successfully. Wait for refresh. Or refresh browser."
             );
             getProducts(); // refresh get products again
           }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      }
+    } catch (error) {
+      console.error(error)
+      if (error.response.status === 404) {
+        toast.error("Product not found.")
+      } else {
+        toast.error("Product not deleted.")
+      }
     }
   };
 
