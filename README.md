@@ -31,11 +31,11 @@ cd frontend
 npm install
 ```
 
-OR
+AND
 
 ```
 cd server
-npm i
+npm install
 ```
 
 #### Run the Frontend and Backend
@@ -51,6 +51,8 @@ Backend
 cd server
 npm run server
 ```
+
+AND
 
 Frontend
 
