@@ -110,7 +110,6 @@ export const updateProductByProductId = (req, res) => {
         products.push(singleProduct)
         productsjson = JSON.stringify(products, null, 4)
         fs.writeFileSync("data.json", productsjson, "utf-8")
-
         res.status(200).send("Product updated.")
     } else {
         res.status(404).send("Product not found.")

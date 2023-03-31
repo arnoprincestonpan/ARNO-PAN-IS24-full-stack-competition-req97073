@@ -56,7 +56,7 @@ function Edit() {
   const updateSingleProduct = async (state) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/products/${productId}`,
+        `http://localhost:5000/api/product/${productId}`,
         state
       );
       if (response.status === 200) {
@@ -65,10 +65,10 @@ function Edit() {
       } 
     } catch (error) {
       console.error(error);
-      if (error.response.status === 404) {
-        toast.warning("Product not Found. No Update applied.")
+      if(error.response.status === 404){
+        toast.error("Product not found.")
       } else {
-        toast.error("Failed to update product.");
+        toast.error("Failed to update product.")
       }
     }
   };

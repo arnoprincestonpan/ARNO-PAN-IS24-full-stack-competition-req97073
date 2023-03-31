@@ -1,23 +1,97 @@
 # ARNO-PAN-IS24-full-stack-competition-req97073
 
-## Getting Started
+Candidate: Arno Princeston Pan
+Contact: pan.arno@gmail.com
 
 ## Introduction
 
-To run the full stack web application. You will need a copy of this repository. Make sure you are logged into your GitHub account and have the proper code handle. Go to your terminal or command line and git clone the SSH link.
+### Story Line
+
+After reading Lisa(director)'s and Alan(DevOps)'s user stories, a solution was created by Arno Pan. It is a full stack website that has a landing page that retrieves all products avaiable with the data and title requested (Product Number, Product Name, Scrum Master Name, Product Owner Name, Developer Names, Start Date, Methodology). It has other sub-pages for adding products, updating products and an about page. The product is now presented to Lisa and Alan to test for review.
+
+### Getting Started
+
+#### Cloning
+
+1. Clone this repository
 
 ```
 git clone git@github.com:arnoprincestonpan/ARNO-PAN-IS24-full-stack-competition-req97073.git
 ```
 
-After it is cloned. You would need to go into the frontend folder and backend folder and install the npm packages. For macOS, simply right click the folders and open with terminal and type in npm i or npm install.
+#### Install Dependencies
+
+2. Navigate to the frontend directory: "cd frontend".
+3. Install dependencies: "npm install" or "npm i"
+4. Navigate to the backend directory: "cd server"
+5. Install dependencies: "npm install" or "npm i"
 
 ```
+cd frontend
 npm install
 ```
 
 OR
 
 ```
+cd server
 npm i
 ```
+
+#### Run the Frontend and Backend
+
+6. Navigate to the backend directory: "cd server"
+7. Run backend: "npm run server"
+8. Navigate to the frontend directory: "cd frontend"
+9. Run frontend: "npm start"
+
+Backend
+
+```
+cd server
+npm run server
+```
+
+Frontend
+
+```
+cd frontend
+npm start
+```
+
+#### Usage Guideline
+
+##### Accessing the Website
+
+###### Frontend (Use a browser)
+- http://localhost:3000
+
+###### Search for Scrum Master or Developer
+1. On the Scrum Master Name field or Developer Name field, enter a name.
+2. Click Search.
+3. Click Clear Search when you are done.
+
+###### View Product
+1. Click View on right of the row you want to see. 
+
+###### Add Product
+1. Click Add Product on the header component. (Next to the top right of the page)
+2. Enter Product information on all the fields. 
+
+###### 
+
+Note:
+i. Use the latest browser. i.e. Google Chrome, Microsoft Edge, or Mozilla Firefox
+ii. Click Clear Search if you want to refresh the page.
+
+###### Backend (Use Postman or Thunderclient)
+- http://localhost:5000
+
+###### API Routes
+- `GET /api/products`: Get a list of all available products
+- `GET /api/products/:id`: Get a specific product by ID
+- `POST /api/products`: Add a new product
+- `PUT /api/products/:id`: Update a specific product by ID
+- `DELETE /api/products/:id`: Delete a specific product by ID
+
+Note: If you are using your own database, you need to make sure if it is empty it needs to at least have "[]" in the JSON file. Also, make sure it is in the parent folder "server" and named as "data.json". 
