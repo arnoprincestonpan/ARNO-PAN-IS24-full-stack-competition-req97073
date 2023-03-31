@@ -1,0 +1,113 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "products",
+    "dateExported": "2023-03-31T21:06:41.100Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "971619b2-83cd-4155-8bcb-8cb37e2a0a81",
+            "colId": "3d07aaf5-6d0f-46b3-bc10-9b6e6d06853d",
+            "containerId": "",
+            "name": "All Products",
+            "url": "localhost:5000/api/products",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-03-27T22:56:11.077Z",
+            "modified": "2023-03-27T22:56:11.077Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e8f6ad20-0cc1-4c8d-9f05-35813be9ea2d",
+            "colId": "3d07aaf5-6d0f-46b3-bc10-9b6e6d06853d",
+            "containerId": "",
+            "name": "Create new Product Copy",
+            "url": "localhost:5000/api/products",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2023-03-27T22:56:11.078Z",
+            "modified": "2023-03-31T20:55:12.659Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "19f56cb2-54b0-4463-970a-0f2cdd51ad7d",
+            "colId": "3d07aaf5-6d0f-46b3-bc10-9b6e6d06853d",
+            "containerId": "",
+            "name": "Product by ProductId",
+            "url": "localhost:5000/api/product/2",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-03-27T22:56:11.079Z",
+            "modified": "2023-03-31T20:54:56.601Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "02a72a96-706c-422f-bce9-ce8f6394d2bd",
+            "colId": "3d07aaf5-6d0f-46b3-bc10-9b6e6d06853d",
+            "containerId": "",
+            "name": "Delete by ProductId",
+            "url": "localhost:5000/api/product/2",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-03-27T22:56:11.081Z",
+            "modified": "2023-03-31T20:54:49.886Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4bef7fea-e38e-4268-938f-ee93c4d49186",
+            "colId": "3d07aaf5-6d0f-46b3-bc10-9b6e6d06853d",
+            "containerId": "",
+            "name": "Product by Id",
+            "url": "localhost:5000/api/product/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-03-27T22:56:11.082Z",
+            "modified": "2023-03-31T20:54:28.323Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "productName",
+                        "value": "House of the Dragon"
+                    },
+                    {
+                        "name": "productOwnerName",
+                        "value": "Edward Pan"
+                    },
+                    {
+                        "name": "scrumMasterName",
+                        "value": "Ryan Condal"
+                    },
+                    {
+                        "name": "startDate",
+                        "value": "2023/03/24"
+                    },
+                    {
+                        "name": "methodology",
+                        "value": "Waterfall"
+                    },
+                    {
+                        "name": "Developers[0]",
+                        "value": "Arno Pan"
+                    },
+                    {
+                        "name": "Developers[1]",
+                        "value": "Edward Pan"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ]
+}
