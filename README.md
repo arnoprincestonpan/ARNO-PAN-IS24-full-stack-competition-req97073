@@ -7,7 +7,7 @@ Contact: pan.arno@gmail.com
 
 ### Story Line
 
-After reading Lisa(director)'s and Alan(DevOps)'s user stories, a solution was created by Arno Pan. It is a full stack website that has a landing page that retrieves all products avaiable with the data and title requested (Product Number, Product Name, Scrum Master Name, Product Owner Name, Developer Names, Start Date, Methodology). It has other sub-pages for adding products, updating products and an about page. The product is now presented to Lisa and Alan to test for review.
+After reading Lisa(director)'s and Alan(DevOps)'s user stories, a solution was created by Arno Pan. It is a full stack website that has a landing page that retrieves all products available with the data and title requested (Product Number, Product Name, Scrum Master Name, Product Owner Name, Developer Names, Start Date, Methodology). It has other sub-pages for adding products, updating products and an about page. The product is now presented to Lisa and Alan to test for review.
 
 ### Getting Started
 
@@ -68,17 +68,24 @@ npm start
 
 ###### Search for Scrum Master or Developer
 1. On the Scrum Master Name field or Developer Name field, enter a name.
-2. Click Search.
-3. Click Clear Search when you are done.
+2. Click Search Button.
+3. Click Clear Search Button when you are done.
 
 ###### View Product
-1. Click View on right of the row you want to see. 
+1. Click View Button on the right of the row you want to view. 
+
+###### Edit Product
+1. Click the Edit Button on the right of the row you want to edit.
+
+###### Delete Product
+1. Click the Delete Button on the right of the row you want to delete.
 
 ###### Add Product
 1. Click Add Product on the header component. (Next to the top right of the page)
 2. Enter Product information on all the fields. 
 
-###### 
+###### About 
+1. Click About on the header component.
 
 Note:
 i. Use the latest browser. i.e. Google Chrome, Microsoft Edge, or Mozilla Firefox
