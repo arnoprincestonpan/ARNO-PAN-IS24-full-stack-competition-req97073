@@ -6,6 +6,7 @@ import { getProducts,
     updateProductByProductId 
 } from "../controllers/productsController"
 
+// initialize express Router
 const router = express.Router()
 
 // get All Products
