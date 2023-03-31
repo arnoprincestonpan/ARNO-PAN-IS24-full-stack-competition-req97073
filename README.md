@@ -102,9 +102,9 @@ ii. Click Clear Search if you want to refresh the page.
 
 ###### API Routes
 - `GET /api/products`: Get a list of all available products
-- `GET /api/products/:id`: Get a specific product by ID
+- `GET /api/product/:id`: Get a specific product by ID
 - `POST /api/products`: Add a new product
-- `PUT /api/products/:id`: Update a specific product by ID
-- `DELETE /api/products/:id`: Delete a specific product by ID
+- `PUT /api/product/:id`: Update a specific product by ID
+- `DELETE /api/product/:id`: Delete a specific product by ID
 
 Note: If you are using your own database, you need to make sure if it is empty it needs to at least have "[]" in the JSON file. Also, make sure it is in the parent folder "server" and named as "data.json". 
